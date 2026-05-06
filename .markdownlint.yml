@@ -1,0 +1,25 @@
+# Coo-Cah Factory Repo — markdownlint configuration
+# Based on group-wide standard from Coo-Kah-Doks
+
+default: true
+
+# Allow long lines in tables
+MD013:
+  line_length: 200
+  tables: false
+  code_blocks: false
+
+# Allow multiple top-level headings in docs
+MD025: false
+
+# Allow raw HTML in tables/badges
+MD033: false
+
+# Ordered list numbering — allow 1. 1. 1. style
+MD029: false
+
+# No blank lines after headings requirement — relaxed
+MD022: false
+
+# Allow duplicate headings (e.g. "Phase 1" in multiple docs)
+MD024: false

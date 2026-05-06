@@ -1,10 +1,12 @@
 site_name: Coo-Cah Personal Electronics Factory
 site_description: >
-  Tier 1 — Electronics Vertical — Blueprint, operational docs & AI-integration specs
-  for the Coo-Cah Personal Electronics Factory (Sagamu, Ogun State, Nigeria).
+  Tier 1 Electronics Vertical — Blueprint, operational docs & AI-integration specs for the
+  Coo-Cah Personal Electronics Factory (Sagamu, Ogun State, Nigeria). Manufactures smartphones,
+  feature phones, TWS earbuds, smartwatches, power banks & PCBs.
 site_url: https://oumar-code.github.io/coo-cah-factory-electronics-personal/
 repo_url: https://github.com/oumar-code/coo-cah-factory-electronics-personal
-repo_name: coo-cah-factory-electronics-personal
+repo_name: oumar-code/coo-cah-factory-electronics-personal
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -12,34 +14,76 @@ theme:
     - scheme: default
       primary: indigo
       accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.expand
     - navigation.top
-    - search.suggest
     - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
 
-nav:
-  - Home: index.md
-  - Machinery: machinery.md
-  - CapEx & OpEx: capex-opex.md
-  - Floor Plan: floor-plan.md
-  - Automation Roadmap: automation-roadmap.md
-  - MES Integration: mes-integration.md
-  - Supply Chain: supply-chain.md
-  - Regulatory: regulatory.md
-  - Digital Twin: digital-twin.md
-  - Energy Profile: energy-profile.md
+plugins:
+  - search
+  - mermaid2
 
 markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
   - tables
   - toc:
       permalink: true
-  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - admonition
-  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Master Repo Reference: master-repo-ref.md
+  - Factory Docs:
+    - Machinery & Equipment: machinery.md
+    - Energy Profile: energy-profile.md
+    - Floor Plan: floor-plan.md
+    - Automation Roadmap: automation-roadmap.md
+    - Supply Chain: supply-chain.md
+    - Regulatory & Compliance: regulatory.md
+    - CapEx / OpEx: capex-opex.md
+    - Digital Twin: digital-twin.md
+    - MES Integration: mes-integration.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/oumar-code/Coo-Kah-Doks
+      name: Master Repository — Coo-Kah-Doks
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: >
+  © 2025 Coo-Cah Technologies Holdings. All rights reserved. |
+  Part of the Coo-Cah Manufacturing Ecosystem.
