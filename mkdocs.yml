@@ -1,0 +1,45 @@
+site_name: Coo-Cah Personal Electronics Factory
+site_description: >
+  Tier 1 — Electronics Vertical — Blueprint, operational docs & AI-integration specs
+  for the Coo-Cah Personal Electronics Factory (Sagamu, Ogun State, Nigeria).
+site_url: https://oumar-code.github.io/coo-cah-factory-electronics-personal/
+repo_url: https://github.com/oumar-code/coo-cah-factory-electronics-personal
+repo_name: coo-cah-factory-electronics-personal
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Machinery: machinery.md
+  - CapEx & OpEx: capex-opex.md
+  - Floor Plan: floor-plan.md
+  - Automation Roadmap: automation-roadmap.md
+  - MES Integration: mes-integration.md
+  - Supply Chain: supply-chain.md
+  - Regulatory: regulatory.md
+  - Digital Twin: digital-twin.md
+  - Energy Profile: energy-profile.md
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
