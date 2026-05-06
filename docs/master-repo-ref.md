@@ -1,3 +1,5 @@
+<!-- This file is the MkDocs docs/ mirror of root MASTER_REPO_REF.md. Cross-links use relative paths for the docs/ context. -->
+
 # Master Repository Reference
 
 This document establishes the formal traceability link between this factory repository and the

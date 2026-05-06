@@ -17,7 +17,7 @@ img[alt*="Status"] {
   margin-right: 4px;
 }
 
-/* Admonition — NCC compliance warning colour */
-.admonition.danger {
-  border-left-color: #FF5722 !important;
+/* Admonition — NCC type approval / RF compliance warning */
+.admonition.warning {
+  border-left-color: #FF9800 !important;
 }
