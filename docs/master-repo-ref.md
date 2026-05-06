@@ -44,16 +44,16 @@ are explicitly adopted and applied in this factory repository:
 
 | Standard Area | Master Repo Reference | Applied In This Repo |
 |---|---|---|
-| ISO 9001:2015 — Quality Management | `docs/standards/iso-9001.md` | [docs/regulatory.md](./docs/regulatory.md) |
-| ISO 45001:2018 — Health & Safety | `docs/standards/iso-45001.md` | [docs/regulatory.md](./docs/regulatory.md) |
-| ISO 14001:2015 — Environmental (Phase 2) | `docs/standards/iso-14001.md` | [docs/regulatory.md](./docs/regulatory.md) |
-| ISO 50001:2018 — Energy (Phase 2) | `docs/standards/iso-50001.md` | [docs/energy-profile.md](./docs/energy-profile.md) |
-| Automation Phases Framework | `docs/automation/phases.md` | [docs/automation-roadmap.md](./docs/automation-roadmap.md) |
-| Supply Chain Doctrine | `docs/supply-chain/doctrine.md` | [docs/supply-chain.md](./docs/supply-chain.md) |
-| Energy Strategy | `docs/energy/strategy.md` | [docs/energy-profile.md](./docs/energy-profile.md) |
-| MES Integration Standards | `docs/mes/integration-standards.md` | [docs/mes-integration.md](./docs/mes-integration.md) |
-| AI Platform Standards | `docs/ai/platform.md` | [docs/digital-twin.md](./docs/digital-twin.md) |
-| Digital Twin Architecture | `docs/digital-twin/architecture.md` | [docs/digital-twin.md](./docs/digital-twin.md) |
+| ISO 9001:2015 — Quality Management | `docs/standards/iso-9001.md` | [regulatory.md](./regulatory.md) |
+| ISO 45001:2018 — Health & Safety | `docs/standards/iso-45001.md` | [regulatory.md](./regulatory.md) |
+| ISO 14001:2015 — Environmental (Phase 2) | `docs/standards/iso-14001.md` | [regulatory.md](./regulatory.md) |
+| ISO 50001:2018 — Energy (Phase 2) | `docs/standards/iso-50001.md` | [energy-profile.md](./energy-profile.md) |
+| Automation Phases Framework | `docs/automation/phases.md` | [automation-roadmap.md](./automation-roadmap.md) |
+| Supply Chain Doctrine | `docs/supply-chain/doctrine.md` | [supply-chain.md](./supply-chain.md) |
+| Energy Strategy | `docs/energy/strategy.md` | [energy-profile.md](./energy-profile.md) |
+| MES Integration Standards | `docs/mes/integration-standards.md` | [mes-integration.md](./mes-integration.md) |
+| AI Platform Standards | `docs/ai/platform.md` | [digital-twin.md](./digital-twin.md) |
+| Digital Twin Architecture | `docs/digital-twin/architecture.md` | [digital-twin.md](./digital-twin.md) |
 | Factory Blueprint Template | `factories/_template/` | All `docs/` files |
 | Personal Electronics Blueprint | `factories/electronics/personal-electronics/` | All `docs/` files |
 
