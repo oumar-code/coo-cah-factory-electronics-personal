@@ -4,6 +4,9 @@
 > **Factory:** Coo-Cah Personal Electronics Factory | **Location:** Sagamu Industrial Estate, Ogun State | **Phase:** Phase 1
 > **Document Version:** 1.0 | **Owner:** Digital Manufacturing & AI Team
 
+> **Group Platform Reference:** <a href="https://github.com/oumar-code/Coo-Kah-Doks/blob/main/platform/digital-twin-platform-architecture.md">Coo-Kah-Doks — platform/digital-twin-platform-architecture.md</a>
+> **Platform decision:** Hybrid Coo-Cah DT Engine (InfluxDB + FastAPI + Grafana + MQTT + OPC-UA connectors), with factory edge node + Rwanda cloud hub.
+
 ---
 
 ## 1. Digital Twin Overview
@@ -12,14 +15,18 @@ The Coo-Cah Personal Electronics Factory Digital Twin is a live, synchronised vi
 
 | Parameter                        | Value                                                        |
 |----------------------------------|--------------------------------------------------------------|
-| Digital Twin Platform            | Coo-Cah AI Platform — Digital Twin Module                   |
+| Digital Twin Platform            | Coo-Cah Digital Twin Engine (group-standard hybrid DT platform) |
 | Data Synchronisation Latency     | ≤ 1 second (real-time streaming via MQTT)                   |
 | Asset Count (Phase 1)            | 142 registered physical assets                              |
 | Sensor Integration Points        | ~2,800 data points (energy, temperature, motion, QC, AMR)  |
 | Simulation Framework             | Discrete-event simulation (DES) + process physics models    |
 | 3D Spatial Model                 | BIM-linked 3D model of 18,000 m² floor                     |
-| Cloud Platform                   | Coo-Cah Platform (Lagos DC) + on-site edge nodes            |
+| Deployment Model                 | Factory edge node + Rwanda cloud hub                        |
 | Phase 2 Expansion                | Cobot kinematics models; AI vision inference twin           |
+
+> **Gate 1 Alignment Notes:**
+> - Phase 1/2 DT integration is read-only from OT to DT/AI except approved enterprise interfaces.
+> - Group architecture source is the Coo-Kah-Doks platform architecture doc above.
 
 ---
 
