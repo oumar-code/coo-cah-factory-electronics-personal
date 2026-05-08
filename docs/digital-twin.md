@@ -7,6 +7,12 @@
 > **Group Platform Reference:** <a href="https://github.com/oumar-code/Coo-Kah-Doks/blob/main/platform/digital-twin-platform-architecture.md">Coo-Kah-Doks — platform/digital-twin-platform-architecture.md</a>
 > **Platform decision:** Hybrid Coo-Cah DT Engine (InfluxDB + FastAPI + Grafana + MQTT + OPC-UA connectors), with factory edge node + Rwanda cloud hub.
 
+> **Implementation documents:**
+> - [`dt-implementation-plan.md`](./dt-implementation-plan.md) — Phased build plan: Phase 0 Foundation → Phase 3 Prescriptive Twin
+> - [`dt-asset-manifest.md`](./dt-asset-manifest.md) — Machine-readable YAML schema for all 142 registered assets
+> - [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) — MQTT topic namespace and broker configuration
+> - [`dt-infrastructure.md`](./dt-infrastructure.md) — Infrastructure stack and OT/IT network architecture
+
 ---
 
 ## 1. Digital Twin Overview
@@ -195,3 +201,7 @@ The Coo-Cah Personal Electronics Factory Digital Twin is a live, synchronised vi
 *For MES data architecture and machine integration protocols, refer to [`mes-integration.md`](./mes-integration.md).*
 *For automation milestones that expand the digital twin scope, refer to [`automation-roadmap.md`](./automation-roadmap.md).*
 *For energy system monitoring details, refer to [`energy-profile.md`](./energy-profile.md).*
+*For the phased DT build plan, refer to [`dt-implementation-plan.md`](./dt-implementation-plan.md).*
+*For the asset data manifest (YAML schema), refer to [`dt-asset-manifest.md`](./dt-asset-manifest.md).*
+*For the MQTT topic namespace, refer to [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md).*
+*For infrastructure and network architecture, refer to [`dt-infrastructure.md`](./dt-infrastructure.md).*

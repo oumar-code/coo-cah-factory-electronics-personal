@@ -72,7 +72,12 @@ nav:
     - Supply Chain: supply-chain.md
     - Regulatory & Compliance: regulatory.md
     - CapEx / OpEx: capex-opex.md
-    - Digital Twin: digital-twin.md
+    - Digital Twin:
+      - Architecture & Asset Registry: digital-twin.md
+      - Implementation Plan: dt-implementation-plan.md
+      - Asset Data Manifest: dt-asset-manifest.md
+      - MQTT Namespace: dt-mqtt-namespace.md
+      - Infrastructure & Network: dt-infrastructure.md
     - MES Integration: mes-integration.md
 
 extra:

@@ -156,6 +156,10 @@
 | [docs/regulatory.md](./docs/regulatory.md) | NCC type approval, SON NIS, IEC 62368-1, RoHS, REACH |
 | [docs/capex-opex.md](./docs/capex-opex.md) | Phase 1 CapEx ~₦28B, unit economics per product category |
 | [docs/digital-twin.md](./docs/digital-twin.md) | Asset registry for SMT lines, assembly robots, test equipment |
+| [docs/dt-implementation-plan.md](./docs/dt-implementation-plan.md) | Phased DT build plan: Phase 0 Foundation → Phase 3 Prescriptive |
+| [docs/dt-asset-manifest.md](./docs/dt-asset-manifest.md) | Machine-readable YAML data schema for all 142 registered assets |
+| [docs/dt-mqtt-namespace.md](./docs/dt-mqtt-namespace.md) | MQTT topic hierarchy, QoS policy, broker configuration |
+| [docs/dt-infrastructure.md](./docs/dt-infrastructure.md) | InfluxDB + FastAPI + Grafana stack; OT/IT network architecture |
 
 ---
 
