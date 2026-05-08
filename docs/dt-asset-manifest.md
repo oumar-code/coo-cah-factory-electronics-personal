@@ -1766,18 +1766,27 @@ sensors:
 | Z8 | RF & NCC Lab | 6 | 12 |
 | Z1 | Component Stores | 4 | 4 |
 | Z9 | Final QC Lab | 4 | 5 |
-| Z10 | Packaging | 3 + 2 | 6 |
+| Z10 | Packaging | 5 | 6 |
 | Z11 | FG Warehouse | 2 | 5 |
 | AMR | Fleet (all zones) | 34 | 34 |
 | Site | Energy Systems | 13 | 16 |
-| **Total** | | **101 Asset ID groups** | **156 physical units** |
+| **Total** | | **103 Asset ID groups** | **156 physical units** |
 
-> **Note:** The total of 156 physical units spans 101 logical asset ID groups. Sensors for
-> multi-unit groups (e.g., ×6 flash fixtures) share a common schema; the instance is identified
-> by the MQTT topic unit index (see [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md)). The asset
-> registry in [`digital-twin.md`](./digital-twin.md) records 142 registered physical assets;
-> the additional units above that count reflect supporting zone assets (Z1, Z9, Z10, Z11)
-> fully enumerated here.
+> **Count reconciliation:**
+>
+> - **103 logical Asset ID groups** — the number of distinct `asset_id` entries in this manifest.
+>   Multi-instance assets (e.g., 6× flash fixtures under `DT-PH-04`) are counted once here.
+>
+> - **156 physical units** — the total when every `qty` field is expanded. This is the sum of
+>   all individual machines, sensors, and devices on the factory floor.
+>
+> - **142 registered physical assets** — the count stated in [`digital-twin.md`](./digital-twin.md)
+>   §1. That number represents production-critical assets originally enumerated in the DT asset
+>   registry (Sections 2.1–2.6 of that document), which covers SMT, phone, TWS/watch/PB,
+>   RF lab, AMR fleet, and energy assets. The 14-unit difference from 156 reflects the supporting
+>   zone assets (Z1 VLMs, Z9 test equipment, Z10 packaging stations, Z11 warehouse sensors)
+>   that are fully defined in this manifest but were not individually enumerated in the initial
+>   digital-twin.md registry tables. The combined total across all zones is 156 physical units.
 
 ---
 

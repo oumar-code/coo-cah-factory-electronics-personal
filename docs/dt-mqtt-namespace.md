@@ -177,9 +177,9 @@ SMT Line 2 topics mirror Line 1 exactly, with `z3` and `smt-l2` replacing `z2` a
 | ETS-Lindgren Chamber | `rf-chamber-large` | `01`, `02` | `test_in_progress` | `cce/sag/z8/rf-chamber-large/01/test_in_progress` |
 | Benchtop Chamber | `rf-chamber-bench` | `01`, `02` | `frequency_band` | `cce/sag/z8/rf-chamber-bench/01/frequency_band` |
 | Benchtop Chamber | `rf-chamber-bench` | `01`, `02` | `test_result` | `cce/sag/z8/rf-chamber-bench/02/test_result` |
-| R&S CMW500 NW | `rf-cme500` | `01`, `02` | `trp_dbm` | `cce/sag/z8/rf-cmw500/01/trp_dbm` |
-| R&S CMW500 NW | `rf-cme500` | `01`, `02` | `tis_dbm` | `cce/sag/z8/rf-cmw500/01/tis_dbm` |
-| R&S CMW500 NW | `rf-cme500` | `01`, `02` | `pass_fail` | `cce/sag/z8/rf-cmw500/01/pass_fail` |
+| R&S CMW500 NW | `rf-cmw500` | `01`, `02` | `trp_dbm` | `cce/sag/z8/rf-cmw500/01/trp_dbm` |
+| R&S CMW500 NW | `rf-cmw500` | `01`, `02` | `tis_dbm` | `cce/sag/z8/rf-cmw500/01/tis_dbm` |
+| R&S CMW500 NW | `rf-cmw500` | `01`, `02` | `pass_fail` | `cce/sag/z8/rf-cmw500/01/pass_fail` |
 | Keysight Spectrum | `rf-spectrum` | — | `peak_frequency_mhz` | `cce/sag/z8/rf-spectrum/peak_frequency_mhz` |
 | Keysight Spectrum | `rf-spectrum` | — | `emission_flag` | `cce/sag/z8/rf-spectrum/emission_flag` |
 | CATR OTA | `rf-catr` | — | `trp_dbm` | `cce/sag/z8/rf-catr/trp_dbm` |
