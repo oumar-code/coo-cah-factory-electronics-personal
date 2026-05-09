@@ -148,6 +148,7 @@
 | [MASTER_REPO_REF.md](./MASTER_REPO_REF.md) | Master repo traceability, version reference, group standards |
 | [docs/index.md](./docs/index.md) | Executive Summary — factory overview, products, KPIs |
 | [docs/machinery.md](./docs/machinery.md) | SMT lines, phone/TWS/watch assembly, RF test, QC equipment |
+| [docs/execution-plan.md](./docs/execution-plan.md) | Immediate priorities, strategy execution, stage gates, governance cadence |
 | [docs/energy-profile.md](./docs/energy-profile.md) | 550 kW demand, 850 kWp solar, 900 kWh BESS design |
 | [docs/floor-plan.md](./docs/floor-plan.md) | 18,000 m² layout with 2 SMT lines, 4 assembly areas, test zones |
 | [docs/automation-roadmap.md](./docs/automation-roadmap.md) | Phase milestones from MES foundation to lights-out SMT |

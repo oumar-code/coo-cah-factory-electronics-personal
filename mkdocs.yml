@@ -65,6 +65,7 @@ nav:
   - Home: index.md
   - Master Repo Reference: master-repo-ref.md
   - Factory Docs:
+    - Execution Plan: execution-plan.md
     - Machinery & Equipment: machinery.md
     - Energy Profile: energy-profile.md
     - Floor Plan: floor-plan.md
