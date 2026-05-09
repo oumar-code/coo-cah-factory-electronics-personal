@@ -3,7 +3,7 @@
 > **Project Coo-Cah | AI-Powered Manufacturing Ecosystem**
 > **Factory:** Coo-Cah Personal Electronics Factory | **Location:** Sagamu Industrial Estate, Ogun State
 > **Document Version:** 1.0 | **Owner:** Digital Manufacturing & AI Team
-> **Status:** DRAFT — requires co-sign by MES Team Lead before locking
+> **Status:** CONTROLLED DRAFT — Phase 0 anchor deliverable; requires co-sign by MES Team Lead before locking
 
 This manifest is the **contractual data schema** between the MES team and the Digital Twin team.
 Every one of the 142 registered physical assets in the factory has a formally defined entry here:
@@ -13,6 +13,19 @@ ranges.
 > **Lock Policy:** Once signed off and locked (see Version History), changes require a formal change
 > request reviewed by both the Digital Manufacturing Team Lead and MES Team Lead. Any change must be
 > applied simultaneously in InfluxDB, Grafana, and the MQTT topic namespace.
+
+> **Phase 0 role:** This is the anchor deliverable for Phase 0. The MQTT namespace, InfluxDB bucket
+> and measurement design, Telegraf topic mapping, Grafana dashboard structure, and synthetic data
+> generators must all trace back to this manifest.
+
+**Phase 0 control requirements**
+
+- Complete asset coverage for all 142 registered asset IDs from [`digital-twin.md`](./digital-twin.md).
+- Confirm primary protocol, update frequency, and expected operating range for every required metric.
+- Co-sign with the MES Team Lead before changing document status from controlled draft to locked.
+- Publish the approved version to the group MES integration standards path in Coo-Kah-Doks.
+- Confirm alignment with [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) and
+  [`dt-infrastructure.md`](./dt-infrastructure.md) before lock.
 
 ---
 
