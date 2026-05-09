@@ -3,13 +3,25 @@
 > **Project Coo-Cah | AI-Powered Manufacturing Ecosystem**
 > **Factory:** Coo-Cah Personal Electronics Factory | **Location:** Sagamu Industrial Estate, Ogun State
 > **Document Version:** 1.0 | **Owner:** Digital Manufacturing & AI Team
-> **Status:** DRAFT — lock required before first machine FAT
+> **Status:** CONTROLLED DRAFT — lock required after manifest alignment and before first machine FAT
 
 > **Lock Policy:** This namespace is locked once signed off. Post-lock changes require a formal
 > change request reviewed by the Digital Manufacturing Team Lead. All subscribers must be notified
 > before any topic rename takes effect. Changing topic names after machines are wired requires
 > simultaneous updates to all subscribers, publishers, InfluxDB Telegraf configuration, and
 > Grafana datasource queries — the cost is high; the namespace must be right the first time.
+
+> **Phase 0 role:** This document freezes the telemetry contract after the asset manifest is stable
+> enough to define canonical zone, asset, instance, and metric identifiers.
+
+**Phase 0 lock preconditions**
+
+- Confirm topic naming against the controlled asset manifest in
+  [`dt-asset-manifest.md`](./dt-asset-manifest.md).
+- Confirm QoS, retained-message policy, and vendor FAT checklist expectations with the MES team.
+- Confirm Telegraf measurement mapping and synthetic publisher design against
+  [`dt-infrastructure.md`](./dt-infrastructure.md).
+- Lock the namespace before any vendor FAT, gateway build, or production dashboard hard-coding begins.
 
 ---
 

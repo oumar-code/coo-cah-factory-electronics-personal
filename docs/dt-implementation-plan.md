@@ -36,11 +36,51 @@ in what order, and why**.
 Complete all zero-cost and low-cost preparatory work before a single physical machine arrives.
 These tasks have outsized leverage: mistakes made here cost 10–100× more to fix after commissioning.
 
+Phase 0 is run as a **foundation-freeze programme**, not as an open-ended technology build.
+The primary objective is to lock the data contract, topic namespace, infrastructure baseline,
+and facility requirements early enough that commissioning does not re-open core design decisions.
+
+### Execution Model
+
+Phase 0 is governed through three coordinated workstreams with one shared control register in
+[`dt-phase0-governance.md`](./dt-phase0-governance.md):
+
+| Workstream | Scope | Primary Purpose | Critical Output |
+|---|---|---|---|
+| A — Data Contract & Standards | Task 0.1 + Task 0.5 | Freeze naming, schema, and telemetry expectations | Locked manifest + locked MQTT namespace |
+| B — Platform Proving | Task 0.2 | Prove the DT stack against synthetic data before machine arrival | Running Rwanda dev stack + signed-off dashboards |
+| C — Physical & Facility Readiness | Task 0.3 + Task 0.4 | Eliminate retrofit risk in BIM and building services | Imported IFC model + signed building services spec |
+
+### Execution Order and Dependency Rules
+
+The execution order is intentional and is not calendar-driven alone:
+
+1. Launch Phase 0 governance and track all five outputs in the Phase 0 control register.
+2. Finalise the asset manifest first; it is the anchor deliverable for every downstream DT design choice.
+3. Lock the MQTT namespace immediately after the manifest is stable enough to prevent schema drift.
+4. Run the Rwanda dev stack in parallel only against the controlled manifest/namespace baseline.
+5. Pull the edge node specification into building-services sign-off before fit-out procurement hardens.
+6. Manage BIM delivery to civil cadence, but enforce zone and asset naming alignment from the start.
+
+The following dependency rules are mandatory:
+
+- [ ] Asset manifest reaches controlled baseline before MQTT namespace lock.
+- [ ] Asset manifest + MQTT namespace align before full synthetic data generator design.
+- [ ] Infrastructure and edge requirements are approved before fit-out procurement freeze.
+- [ ] As-built BIM is required before spatial acceptance.
+- [ ] All locked artifacts are required before first machine FAT and commissioning.
+
+### Governance Output
+
+The formal Phase 0 governance artifact is [`dt-phase0-governance.md`](./dt-phase0-governance.md).
+It records workstreams, task ownership, blockers, approval criteria, dependency controls, and the
+completion review structure for all five Phase 0 outputs.
+
 ### Task 0.1 — Publish the Asset Data Manifest
 
 **Owner:** Digital Manufacturing Team + MES Team
 **Deadline:** Before factory civil works complete (M1.1)
-**Output:** [`dt-asset-manifest.md`](./dt-asset-manifest.md)
+**Output:** [`dt-asset-manifest.md`](./dt-asset-manifest.md) — promoted from controlled draft to locked standard
 
 The asset manifest is the contractual schema between the MES team and the DT team. Every one of the
 142 registered physical assets must have a formally defined data contract: Asset ID, zone, protocol,
@@ -71,6 +111,9 @@ Stand up the full Coo-Cah DT Engine in a development environment on the Rwanda c
 *before any machines exist*. Use synthetic data generators to simulate all 142 assets at the designed
 update rates.
 
+> **Entry condition:** Task 0.1 and Task 0.5 must be stable enough to provide the schema and topic
+> baseline for synthetic publishers, Telegraf mappings, and Grafana panels.
+
 Key actions:
 
 - [ ] Provision Rwanda cloud hub compute node (minimum: 16 vCPU, 64 GB RAM, 4 TB NVMe).
@@ -97,6 +140,9 @@ capture actual column positions, aisle widths, and machine footprints accurately
 persistent spatial reference for the DT floor visualisation and, in Phase 3, for simulation
 collision detection.
 
+> **Control rule:** Zone naming and asset footprint identifiers must stay aligned with the asset
+> manifest and MQTT namespace from the start, even if final IFC acceptance waits for as-built issue.
+
 Key actions:
 
 - [ ] Commission BIM contractor during civil construction; deliverable is IFC + DWG format.
@@ -119,6 +165,9 @@ The edge node cannot be retrofitted. It must be designed into the building servi
 dedicated rack space, power, cooling, and the OT/IT network segregation. See
 [`dt-infrastructure.md`](./dt-infrastructure.md) §3 for the full edge node specification.
 
+> **Priority rule:** Treat this as an early design-freeze task. If fit-out procurement hardens before
+> the DT edge node requirements are embedded, retrofit cost and commissioning risk rise materially.
+
 Key requirements to embed in the Building Services Spec:
 
 | Requirement | Specification |
@@ -136,7 +185,7 @@ Key requirements to embed in the Building Services Spec:
 
 **Owner:** Digital Manufacturing Team
 **Deadline:** At least 4 weeks before first machine FAT (Factory Acceptance Testing)
-**Output:** [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) — locked and version-controlled
+**Output:** [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) — promoted from controlled draft to locked and version-controlled
 
 Changing MQTT topic names after machines are wired is operationally expensive: every subscriber
 must be updated, and any gap creates data loss or duplication.
@@ -164,6 +213,16 @@ Phase 0 is complete when all five tasks are done **and** verified:
 - [ ] BIM model IFC file received from civil contractor and imported into DT platform.
 - [ ] Edge node requirements signed off in Building Services Spec.
 - [ ] MQTT namespace document locked in version control.
+
+### Phase 0 Close-Out Review
+
+Phase 0 closes only after a formal review chaired by the Digital Manufacturing Team Lead with the
+MES Team Lead, IT/OT Infrastructure Lead, and Factory Engineering representative. The review must:
+
+- [ ] confirm that all task outputs satisfy the approval criteria recorded in the Phase 0 governance register;
+- [ ] confirm that the manifest, namespace, infrastructure baseline, and BIM naming model are mutually aligned;
+- [ ] record any residual actions as post-Phase-0 carry-over items owned by named leads;
+- [ ] issue a go / no-go decision for first-machine FAT readiness.
 
 ---
 

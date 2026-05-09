@@ -3,6 +3,7 @@
 > **Project Coo-Cah | AI-Powered Manufacturing Ecosystem**
 > **Factory:** Coo-Cah Personal Electronics Factory | **Location:** Sagamu Industrial Estate, Ogun State
 > **Document Version:** 1.0 | **Owner:** IT/OT Infrastructure Team
+> **Status:** CONTROLLED BASELINE — Phase 0 platform-proving and edge-spec reference
 > **Related:** [Coo-Kah-Doks — platform/digital-twin-platform-architecture.md](https://github.com/oumar-code/Coo-Kah-Doks/blob/main/platform/digital-twin-platform-architecture.md)
 
 ---
@@ -12,6 +13,14 @@
 The Coo-Cah Personal Electronics Factory Digital Twin uses the **Coo-Cah DT Engine** — a
 group-standard hybrid platform combining on-site edge processing with a Rwanda cloud hub. The
 platform was selected in the group architecture decision recorded in Coo-Kah-Doks.
+
+**Phase 0 proving requirements**
+
+- Use this document as the deployment baseline for Task 0.2 dev-mode proving on the Rwanda cloud hub.
+- Keep the bucket schema, Telegraf topic mapping, and dashboard catalogue aligned to the controlled
+  asset manifest and MQTT namespace before any synthetic data validation sign-off.
+- Use Section 3 as the building-services reference for Task 0.4 so rack, power, cooling, WAN, and
+  OT/IT segregation are embedded before fit-out procurement freeze.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

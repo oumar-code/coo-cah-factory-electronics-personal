@@ -9,6 +9,7 @@
 
 > **Implementation documents:**
 > - [`dt-implementation-plan.md`](./dt-implementation-plan.md) — Phased build plan: Phase 0 Foundation → Phase 3 Prescriptive Twin
+> - [`dt-phase0-governance.md`](./dt-phase0-governance.md) — Phase 0 governance register, workstreams, dependencies, sign-off controls
 > - [`dt-asset-manifest.md`](./dt-asset-manifest.md) — Machine-readable YAML schema for all 142 registered assets
 > - [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) — MQTT topic namespace and broker configuration
 > - [`dt-infrastructure.md`](./dt-infrastructure.md) — Infrastructure stack and OT/IT network architecture
