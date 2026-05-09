@@ -1,0 +1,2512 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tier 1 Electronics Vertical — Blueprint, operational docs & AI-integration specs for the Coo-Cah Personal Electronics Factory (Sagamu, Ogun State, Nigeria). Manufactures smartphones, feature phones, TWS earbuds, smartwatches, power banks & PCBs.
+">
+      
+      
+      
+        <link rel="canonical" href="https://oumar-code.github.io/coo-cah-factory-electronics-personal/dt-implementation-plan/">
+      
+      
+        <link rel="prev" href="../digital-twin/">
+      
+      
+        <link rel="next" href="../dt-asset-manifest/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Implementation Plan - Coo-Cah Personal Electronics Factory</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#digital-twin-implementation-plan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Coo-Cah Personal Electronics Factory" class="md-header__button md-logo" aria-label="Coo-Cah Personal Electronics Factory" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coo-Cah Personal Electronics Factory
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Implementation Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oumar-code/coo-cah-factory-electronics-personal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/coo-cah-factory-electronics-personal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../master-repo-ref/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Master Repo Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../machinery/" class="md-tabs__link">
+          
+  
+  
+  Factory Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Coo-Cah Personal Electronics Factory" class="md-nav__button md-logo" aria-label="Coo-Cah Personal Electronics Factory" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Coo-Cah Personal Electronics Factory
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oumar-code/coo-cah-factory-electronics-personal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/coo-cah-factory-electronics-personal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-repo-ref/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Repo Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Factory Docs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Factory Docs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machinery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machinery & Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../energy-profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../floor-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floor Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supply-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supply Chain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regulatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regulatory & Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capex-opex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CapEx / OpEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Twin
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital-twin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & Asset Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Plan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-phase-0-foundation-prep-now-q1-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Phase 0 — Foundation Prep (Now → Q1 2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Phase 0 — Foundation Prep (Now → Q1 2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-01-publish-the-asset-data-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.1 — Publish the Asset Data Manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-02-deploy-dt-infrastructure-stack-in-dev-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.2 — Deploy DT Infrastructure Stack in Dev Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-03-commission-the-bim-3d-spatial-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.3 — Commission the BIM / 3D Spatial Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-04-embed-dt-edge-node-requirements-in-building-services-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.4 — Embed DT Edge Node Requirements in Building Services Spec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-05-define-and-lock-the-mqtt-topic-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.5 — Define and Lock the MQTT Topic Namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-0-completion-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0 Completion Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-phase-1-descriptive-twin-q2q4-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Phase 1 — Descriptive Twin (Q2–Q4 2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Phase 1 — Descriptive Twin (Q2–Q4 2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-smt-lines-1-2-highest-priority-highest-data-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.1 — SMT Lines 1 &amp; 2 (Highest Priority, Highest Data Density)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-amr-fleet-twin-most-visually-compelling-stakeholder-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.2 — AMR Fleet Twin (Most Visually Compelling Stakeholder Demo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-energy-system-twin-solar-bess-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.3 — Energy System Twin (Solar + BESS + Grid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-14-phone-test-assembly-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.4 — Phone &amp; Test Assembly Zones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-deliverables-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 Deliverables &amp; Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-phase-2-diagnostic-predictive-twin-20272028" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Phase 2 — Diagnostic + Predictive Twin (2027–2028)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Phase 2 — Diagnostic + Predictive Twin (2027–2028)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-21-predictive-maintenance-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2.1 — Predictive Maintenance Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-22-cobot-scara-kinematics-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2.2 — Cobot &amp; SCARA Kinematics Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-23-ai-vision-inference-twin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2.3 — AI Vision Inference Twin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-24-discrete-event-simulation-des-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2.4 — Discrete Event Simulation (DES) Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-deliverables-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 Deliverables &amp; Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-phase-3-prescriptive-twin-20292030" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Phase 3 — Prescriptive Twin (2029–2030)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Phase 3 — Prescriptive Twin (2029–2030)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-31-lights-out-smt-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3.1 — Lights-Out SMT Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-32-adaptive-wip-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3.2 — Adaptive WIP AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-33-bess-dispatch-optimisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3.3 — BESS Dispatch Optimisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-deliverables-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 Deliverables &amp; Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-immediate-actions-top-5-do-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Immediate Actions — Top 5 (Do Now)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-key-risk-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Key Risk Register
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-roles-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Roles &amp; Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dt-asset-manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Data Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dt-mqtt-namespace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MQTT Namespace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dt-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure & Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mes-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MES Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-phase-0-foundation-prep-now-q1-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Phase 0 — Foundation Prep (Now → Q1 2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Phase 0 — Foundation Prep (Now → Q1 2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-01-publish-the-asset-data-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.1 — Publish the Asset Data Manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-02-deploy-dt-infrastructure-stack-in-dev-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.2 — Deploy DT Infrastructure Stack in Dev Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-03-commission-the-bim-3d-spatial-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.3 — Commission the BIM / 3D Spatial Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-04-embed-dt-edge-node-requirements-in-building-services-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.4 — Embed DT Edge Node Requirements in Building Services Spec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-05-define-and-lock-the-mqtt-topic-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 0.5 — Define and Lock the MQTT Topic Namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-0-completion-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0 Completion Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-phase-1-descriptive-twin-q2q4-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Phase 1 — Descriptive Twin (Q2–Q4 2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Phase 1 — Descriptive Twin (Q2–Q4 2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-smt-lines-1-2-highest-priority-highest-data-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.1 — SMT Lines 1 &amp; 2 (Highest Priority, Highest Data Density)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-amr-fleet-twin-most-visually-compelling-stakeholder-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.2 — AMR Fleet Twin (Most Visually Compelling Stakeholder Demo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-energy-system-twin-solar-bess-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.3 — Energy System Twin (Solar + BESS + Grid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-14-phone-test-assembly-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.4 — Phone &amp; Test Assembly Zones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-deliverables-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 Deliverables &amp; Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-phase-2-diagnostic-predictive-twin-20272028" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Phase 2 — Diagnostic + Predictive Twin (2027–2028)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Phase 2 — Diagnostic + Predictive Twin (2027–2028)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-21-predictive-maintenance-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2.1 — Predictive Maintenance Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-22-cobot-scara-kinematics-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2.2 — Cobot &amp; SCARA Kinematics Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-23-ai-vision-inference-twin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2.3 — AI Vision Inference Twin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-24-discrete-event-simulation-des-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2.4 — Discrete Event Simulation (DES) Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-deliverables-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 Deliverables &amp; Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-phase-3-prescriptive-twin-20292030" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Phase 3 — Prescriptive Twin (2029–2030)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Phase 3 — Prescriptive Twin (2029–2030)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-31-lights-out-smt-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3.1 — Lights-Out SMT Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-32-adaptive-wip-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3.2 — Adaptive WIP AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-33-bess-dispatch-optimisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3.3 — BESS Dispatch Optimisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-deliverables-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 Deliverables &amp; Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-immediate-actions-top-5-do-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Immediate Actions — Top 5 (Do Now)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-key-risk-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Key Risk Register
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-roles-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Roles &amp; Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="digital-twin-implementation-plan">Digital Twin — Implementation Plan<a class="headerlink" href="#digital-twin-implementation-plan" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Project Coo-Cah | AI-Powered Manufacturing Ecosystem</strong>
+<strong>Factory:</strong> Coo-Cah Personal Electronics Factory | <strong>Location:</strong> Sagamu Industrial Estate, Ogun State
+<strong>Document Version:</strong> 1.0 | <strong>Owner:</strong> Digital Manufacturing &amp; AI Team
+<strong>Guiding Principle:</strong> MES-First, Twin Second — the digital twin grows from the MES, not beside it.</p>
+</blockquote>
+<hr />
+<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
+<p>This document is the master implementation plan for building the Coo-Cah Personal Electronics Factory
+Digital Twin from pre-construction through to a fully prescriptive twin by 2030. It is the actionable
+companion to <a href="../digital-twin/"><code>digital-twin.md</code></a>, which defines the architecture, asset registry,
+and simulation use cases.</p>
+<p>The plan is structured across four phases:</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Period</th>
+<th>DT Maturity Level</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Now → Q1 2026</td>
+<td>Foundation Prep</td>
+<td>Pre-construction; no machines required</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Q2–Q4 2026</td>
+<td>Descriptive Twin</td>
+<td>Factory commissioning begins</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2027–2028</td>
+<td>Diagnostic + Predictive</td>
+<td>Automation Phase 2 (cobots, AI vision)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2029–2030</td>
+<td>Prescriptive Twin</td>
+<td>Automation Phase 3 (lights-out SMT)</td>
+</tr>
+</tbody>
+</table>
+<p>The platform stack is already decided (InfluxDB + FastAPI + Grafana + MQTT + OPC-UA, edge node on-site
++ Rwanda cloud hub). This plan assumes that platform decision is fixed and focuses on <strong>what to build,
+in what order, and why</strong>.</p>
+<hr />
+<h2 id="2-phase-0-foundation-prep-now-q1-2026">2. Phase 0 — Foundation Prep (Now → Q1 2026)<a class="headerlink" href="#2-phase-0-foundation-prep-now-q1-2026" title="Permanent link">&para;</a></h2>
+<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h3>
+<p>Complete all zero-cost and low-cost preparatory work before a single physical machine arrives.
+These tasks have outsized leverage: mistakes made here cost 10–100× more to fix after commissioning.</p>
+<h3 id="task-01-publish-the-asset-data-manifest">Task 0.1 — Publish the Asset Data Manifest<a class="headerlink" href="#task-01-publish-the-asset-data-manifest" title="Permanent link">&para;</a></h3>
+<p><strong>Owner:</strong> Digital Manufacturing Team + MES Team
+<strong>Deadline:</strong> Before factory civil works complete (M1.1)
+<strong>Output:</strong> <a href="../dt-asset-manifest/"><code>dt-asset-manifest.md</code></a></p>
+<p>The asset manifest is the contractual schema between the MES team and the DT team. Every one of the
+142 registered physical assets must have a formally defined data contract: Asset ID, zone, protocol,
+sensor list, data types, units, update frequency, and expected operating ranges.</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Review all 142 asset IDs in the asset registry (<a href="../digital-twin/"><code>digital-twin.md</code></a> §2).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Assign a primary protocol and update rate to every asset.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Define expected operating range for each sensor (used for anomaly detection baseline).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Lock the manifest in version control. Any change after machine commissioning requires a formal
+      change request — this prevents schema drift.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Publish the manifest to the group MES integration standards path in Coo-Kah-Doks.</li>
+</ul>
+<blockquote>
+<p><strong>Why this matters first:</strong> Every downstream step — MQTT topic design, InfluxDB schema, Grafana
+dashboard, predictive model inputs — depends on this manifest. Do it wrong and you rebuild
+everything.</p>
+</blockquote>
+<hr />
+<h3 id="task-02-deploy-dt-infrastructure-stack-in-dev-mode">Task 0.2 — Deploy DT Infrastructure Stack in Dev Mode<a class="headerlink" href="#task-02-deploy-dt-infrastructure-stack-in-dev-mode" title="Permanent link">&para;</a></h3>
+<p><strong>Owner:</strong> IT/OT Infrastructure Team
+<strong>Deadline:</strong> Q3 2025 (six months before commissioning)
+<strong>Output:</strong> Running dev instance on Rwanda cloud hub; see <a href="../dt-infrastructure/"><code>dt-infrastructure.md</code></a></p>
+<p>Stand up the full Coo-Cah DT Engine in a development environment on the Rwanda cloud hub
+<em>before any machines exist</em>. Use synthetic data generators to simulate all 142 assets at the designed
+update rates.</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Provision Rwanda cloud hub compute node (minimum: 16 vCPU, 64 GB RAM, 4 TB NVMe).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Deploy InfluxDB 2.x (OSS or Cloud) with bucket schema matching the asset manifest.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Deploy FastAPI backend service with asset registry endpoint and time-series query proxy.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Deploy Grafana (with InfluxDB and MQTT datasources configured).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Stand up Mosquitto MQTT broker with TLS; configure topic namespace per
+      <a href="../dt-mqtt-namespace/"><code>dt-mqtt-namespace.md</code></a>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write synthetic data generators for all 11 production zones at correct update rates.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build the first Grafana dashboards against synthetic data; validate layout before real
+      data arrives.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Document the deployment runbook so the on-site edge node can be commissioned identically.</li>
+</ul>
+<hr />
+<h3 id="task-03-commission-the-bim-3d-spatial-model">Task 0.3 — Commission the BIM / 3D Spatial Model<a class="headerlink" href="#task-03-commission-the-bim-3d-spatial-model" title="Permanent link">&para;</a></h3>
+<p><strong>Owner:</strong> Civil &amp; Industrial Engineering Team
+<strong>Deadline:</strong> Q1 2026 (as-built, concurrent with civil construction completion)
+<strong>Output:</strong> IFC-format 3D model of 18,000 m² floor; registered in DT platform</p>
+<p>The 3D spatial model must be built from the <strong>as-built</strong> civil drawings, not design drawings, to
+capture actual column positions, aisle widths, and machine footprints accurately. This becomes the
+persistent spatial reference for the DT floor visualisation and, in Phase 3, for simulation
+collision detection.</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Commission BIM contractor during civil construction; deliverable is IFC + DWG format.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Define zone boundaries (Z1–Z12) as named regions in the model, matching zone IDs in the
+      asset manifest and MQTT namespace.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Place all 142 asset footprints in the model at their as-built positions.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Import model into DT platform spatial layer; verify zone/asset ID alignment.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Establish a model update protocol: any equipment move triggers a BIM update within 5 business
+      days.</li>
+</ul>
+<hr />
+<h3 id="task-04-embed-dt-edge-node-requirements-in-building-services-spec">Task 0.4 — Embed DT Edge Node Requirements in Building Services Spec<a class="headerlink" href="#task-04-embed-dt-edge-node-requirements-in-building-services-spec" title="Permanent link">&para;</a></h3>
+<p><strong>Owner:</strong> Factory Engineering Team + IT/OT Infrastructure Team
+<strong>Deadline:</strong> Before contractor appointment for fit-out (Q4 2025)
+<strong>Output:</strong> DT Edge Node section added to Building Services Specification</p>
+<p>The edge node cannot be retrofitted. It must be designed into the building services from day one:
+dedicated rack space, power, cooling, and the OT/IT network segregation. See
+<a href="../dt-infrastructure/"><code>dt-infrastructure.md</code></a> §3 for the full edge node specification.</p>
+<p>Key requirements to embed in the Building Services Spec:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rack space</td>
+<td>1 × 42U rack in Z12 (MES/Engineering room); raised floor tile under rack</td>
+</tr>
+<tr>
+<td>Power supply</td>
+<td>Dual-feed UPS-backed circuits; 5 kVA minimum per rack</td>
+</tr>
+<tr>
+<td>Cooling</td>
+<td>Rack-inlet temp ≤ 22°C; Z12 HVAC independent of production zone HVAC</td>
+</tr>
+<tr>
+<td>OT LAN ports</td>
+<td>2× 10 GbE uplinks from OT switch to MES/DT rack</td>
+</tr>
+<tr>
+<td>Cloud WAN</td>
+<td>Dedicated 100 Mbps WAN circuit (minimum); Starlink backup</td>
+</tr>
+<tr>
+<td>Fibre backbone</td>
+<td>Factory-wide single-mode fibre backbone; one drop per production zone</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="task-05-define-and-lock-the-mqtt-topic-namespace">Task 0.5 — Define and Lock the MQTT Topic Namespace<a class="headerlink" href="#task-05-define-and-lock-the-mqtt-topic-namespace" title="Permanent link">&para;</a></h3>
+<p><strong>Owner:</strong> Digital Manufacturing Team
+<strong>Deadline:</strong> At least 4 weeks before first machine FAT (Factory Acceptance Testing)
+<strong>Output:</strong> <a href="../dt-mqtt-namespace/"><code>dt-mqtt-namespace.md</code></a> — locked and version-controlled</p>
+<p>Changing MQTT topic names after machines are wired is operationally expensive: every subscriber
+must be updated, and any gap creates data loss or duplication.</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Define the full topic hierarchy for all 142 assets using the canonical pattern:
+      <code>cce/sag/{zone_id}/{asset_id}/{metric_id}</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Assign QoS levels per asset type (QoS 1 for production data; QoS 0 for high-frequency
+      telemetry like AMR position).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Agree retained message policy with MES team (last known state should be retained for
+      all production machine status topics).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Lock the namespace document. Post-lock changes require a formal change request with
+      impact assessment.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Include MQTT topic map in the FAT checklist for every machine vendor.</li>
+</ul>
+<hr />
+<h3 id="phase-0-completion-gate">Phase 0 Completion Gate<a class="headerlink" href="#phase-0-completion-gate" title="Permanent link">&para;</a></h3>
+<p>Phase 0 is complete when all five tasks are done <strong>and</strong> verified:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Asset manifest published and accepted by MES team lead.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dev DT stack running on Rwanda cloud hub; synthetic dashboards signed off.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> BIM model IFC file received from civil contractor and imported into DT platform.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Edge node requirements signed off in Building Services Spec.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> MQTT namespace document locked in version control.</li>
+</ul>
+<hr />
+<h2 id="3-phase-1-descriptive-twin-q2q4-2026">3. Phase 1 — Descriptive Twin (Q2–Q4 2026)<a class="headerlink" href="#3-phase-1-descriptive-twin-q2q4-2026" title="Permanent link">&para;</a></h2>
+<h3 id="objective_1">Objective<a class="headerlink" href="#objective_1" title="Permanent link">&para;</a></h3>
+<p>A live, read-only mirror of the factory's physical state. All 142 assets are visible in the DT.
+Data lag ≤ 1 second. The twin cannot yet act on anything; it only observes and reports.</p>
+<p>This phase runs <strong>concurrently with factory commissioning</strong> — the DT is wired in zone by zone as
+each production area comes live.</p>
+<hr />
+<h3 id="step-11-smt-lines-1-2-highest-priority-highest-data-density">Step 1.1 — SMT Lines 1 &amp; 2 (Highest Priority, Highest Data Density)<a class="headerlink" href="#step-11-smt-lines-1-2-highest-priority-highest-data-density" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> SMT Line 1 commissioned (Automation Milestone M1.2)
+<strong>Assets:</strong> DT-SMT-L1-01 to -10, DT-SMT-L2-01 to -10 (20 assets, ~840 data points)
+<strong>Protocols:</strong> SECS/GEM (DEK, JUKI, Koh Young), OPC-UA (Heller, Ersa), Ethernet API (Keysight)</p>
+<p>The two SMT lines are the richest data source in the factory and the fastest path to demonstrating DT
+value. Wiring the DT on Day 1 of SMT commissioning means the engineering team can see process health
+on the same day a board comes off the line.</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Validate SECS/GEM connectivity for DEK screen printers and JUKI P&amp;P machines at FAT.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Confirm Heller oven OPC-UA server address space against asset manifest sensor list.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Map all 420 data points per SMT line to their MQTT topics and InfluxDB measurements.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Publish first production Grafana dashboard: SMT Line Health (zone temps, paste CPK,
+      reflow profile, FPY per board, feeder error count).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Validate data latency: ≤ 1 second from machine event to InfluxDB write to Grafana render.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Repeat for SMT Line 2 at M1.2 or M1 Line 2 commissioning.</li>
+</ul>
+<p><strong>Phase 1 Grafana Dashboards — SMT:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dashboard</th>
+<th>Panels</th>
+<th>Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMT Line 1 Overview</td>
+<td>Reflow zone temps ×8, paste CPK, FPY trend, feeder error rate</td>
+<td>Production engineer</td>
+</tr>
+<tr>
+<td>SMT Line 2 Overview</td>
+<td>Same layout as Line 1</td>
+<td>Production engineer</td>
+</tr>
+<tr>
+<td>SMT Cross-Line Compare</td>
+<td>Side-by-side Line 1 vs Line 2 OEE, FPY, changeover time</td>
+<td>Shift supervisor</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="step-12-amr-fleet-twin-most-visually-compelling-stakeholder-demo">Step 1.2 — AMR Fleet Twin (Most Visually Compelling Stakeholder Demo)<a class="headerlink" href="#step-12-amr-fleet-twin-most-visually-compelling-stakeholder-demo" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> AMR fleet commissioned (Automation Milestone M1.3)
+<strong>Assets:</strong> DT-AMR-MIR250-01 to -12, DT-AMR-MIR100-01 to -04, DT-AMR-DOCK-01 to -18 (34 assets)
+<strong>Protocol:</strong> MiR Fleet Manager REST API → MQTT bridge</p>
+<p>The live AMR position map is the single most compelling early DT demonstration for stakeholders,
+investors, and operators. It makes the digital twin tangible to non-technical audiences immediately.</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build MQTT bridge from MiR Fleet Manager API to the DT MQTT broker (1-second poll).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Publish (x, y, θ), speed, battery SoC, mission ID, and mission status per AMR.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build the 2D floor plan overlay in Grafana (SVG background = factory floor layout from BIM)
+      with AMR icons positioned at live coordinates.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build AMR Fleet Health dashboard: per-AMR battery SoC, mission success rate,
+      dock occupancy map, daily mission count.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Validate all 18 charging dock occupied/charging signals reach DT.</li>
+</ul>
+<hr />
+<h3 id="step-13-energy-system-twin-solar-bess-grid">Step 1.3 — Energy System Twin (Solar + BESS + Grid)<a class="headerlink" href="#step-13-energy-system-twin-solar-bess-grid" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> Solar and BESS commissioned (Automation Milestone M1.9)
+<strong>Assets:</strong> DT-EN-PV-01 to -03, DT-EN-BESS-01 to -02, DT-EN-INV-01 to -04, DT-EN-GEN-01,
+           DT-EN-GRID-01, DT-EN-HVAC-01 to -02 (13 assets, ~400 data points)
+<strong>Protocol:</strong> Sungrow iSolarCloud API → InfluxDB; Modbus TCP for grid meter and generator</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configure iSolarCloud API integration; validate solar generation, BESS SoC, and inverter
+      efficiency data flows into InfluxDB.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build the Energy Overview dashboard with the critical KPI tile: <strong>Solar Self-Sufficiency
+      Ratio</strong> (solar generation ÷ total consumption × 100%, target ≥ 80%).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Calculate and display <strong>Energy Intensity per unit</strong> (kWh/phone, kWh/earbud pair) by
+      combining EMS energy data with MES production count data.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wire BESS SoC and SoH alerts: alert at SoC &lt; 20% and SoH &lt; 95%.</li>
+</ul>
+<p><strong>Phase 1 Energy KPI Tile Targets:</strong></p>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Target</th>
+<th>Alert Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solar Self-Sufficiency</td>
+<td>≥ 80% (monthly)</td>
+<td>&lt; 70% triggers review</td>
+</tr>
+<tr>
+<td>BESS SoC (end of day)</td>
+<td>≥ 25%</td>
+<td>&lt; 20% = generator auto-start</td>
+</tr>
+<tr>
+<td>Grid Import Share</td>
+<td>≤ 20%</td>
+<td>&gt; 25% triggers ops review</td>
+</tr>
+<tr>
+<td>Energy/Phone</td>
+<td>≤ 4.8 kWh</td>
+<td>&gt; 5.5 kWh = production review</td>
+</tr>
+<tr>
+<td>Generator Run Hours</td>
+<td>&lt; 100 hrs/year</td>
+<td>&gt; 80 hrs at any month triggers review</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="step-14-phone-test-assembly-zones">Step 1.4 — Phone &amp; Test Assembly Zones<a class="headerlink" href="#step-14-phone-test-assembly-zones" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> Phone assembly lines live (Automation Milestone M1.5)
+<strong>Assets:</strong> DT-PH-01 to -07, DT-TWS-01 to -03, DT-SW-01 to -02, DT-PB-01 to -03,
+           DT-RF-01 to -06 (22 asset groups)
+<strong>Protocols:</strong> OPC-UA (torque stations), REST API (flash, function test, battery tester),
+               VISA/LAN (R&amp;S CMW500), Ethernet API (Cognex, Chroma)</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wire Atlas Copco torque station OPC-UA feeds; validate per-screw torque values appear
+      in unit trace records within 2 seconds of tightening.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wire phone flash and function test fixture REST APIs; validate IMEI, firmware version,
+      and all per-test pass/fail results populate MES trace and DT simultaneously.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wire R&amp;S CMW500 RF test results into DT; verify NCC RF sample flagging appears in DT
+      NCC Compliance dashboard.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build Phone Assembly Zone dashboard: live units/hour per line, flash yield, function
+      test yield, torque NOK alert count.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build RF &amp; NCC Lab dashboard: chamber utilisation %, RF test pass rate per band,
+      NCC TA sample log with certificate status.</li>
+</ul>
+<hr />
+<h3 id="phase-1-deliverables-acceptance-criteria">Phase 1 Deliverables &amp; Acceptance Criteria<a class="headerlink" href="#phase-1-deliverables-acceptance-criteria" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Factory-wide Grafana dashboard (all 11 zones)</td>
+<td>All 142 assets show live status; data lag ≤ 1 second</td>
+</tr>
+<tr>
+<td>AMR fleet 2D position map</td>
+<td>All 16 AMRs visible; position updates ≤ 1 second</td>
+</tr>
+<tr>
+<td>Energy self-sufficiency tile</td>
+<td>Solar self-sufficiency KPI updates every 5 minutes</td>
+</tr>
+<tr>
+<td>Per-unit serial trace in DT</td>
+<td>SMT → Assembly → Test → Dispatch trace readable in DT within 1 second of each event</td>
+</tr>
+<tr>
+<td>NCC RF test dashboard</td>
+<td>Each R&amp;S CMW500 RF test result appears in DT within 5 seconds of test completion</td>
+</tr>
+<tr>
+<td>Alerting</td>
+<td>All critical alerts (machine fault, BESS SoC, yield drop) fire within 30 seconds</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-phase-2-diagnostic-predictive-twin-20272028">4. Phase 2 — Diagnostic + Predictive Twin (2027–2028)<a class="headerlink" href="#4-phase-2-diagnostic-predictive-twin-20272028" title="Permanent link">&para;</a></h2>
+<h3 id="objective_2">Objective<a class="headerlink" href="#objective_2" title="Permanent link">&para;</a></h3>
+<p>The twin not only mirrors reality — it explains <em>why</em> things are happening and forecasts
+<em>what will happen next</em>. Phase 2 is gated by Automation Phase 2 milestones (cobots, AI vision,
+predictive maintenance AI).</p>
+<hr />
+<h3 id="step-21-predictive-maintenance-models">Step 2.1 — Predictive Maintenance Models<a class="headerlink" href="#step-21-predictive-maintenance-models" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> Phase 1 data baseline collected (minimum 6 months of Phase 1 data required)
+<strong>AI Platform:</strong> Coo-Cah AI Platform (as defined in Coo-Kah-Doks <code>docs/ai/platform.md</code>)</p>
+<p>Three predictive models are deployed in Phase 2:</p>
+<p><strong>Model A — Reflow Oven Thermal Degradation (DT-SMT-L1-05, DT-SMT-L2-05)</strong></p>
+<ul>
+<li>Input features: Heating element current draw per zone, zone temperature delta vs. setpoint,
+  oven age (hours since service), conveyor speed, N₂ consumption trend.</li>
+<li>Target: Predict heating element failure probability within next 72 hours.</li>
+<li>Alert action: Maintenance work order created in MES CMMS; DT displays predicted failure date.</li>
+<li>Success criterion: Unplanned SMT oven downtime &lt; 2% (Automation Milestone M2.4).</li>
+</ul>
+<p><strong>Model B — JUKI P&amp;P Feeder Vibration Model (DT-SMT-L1-03/04, DT-SMT-L2-03/04)</strong></p>
+<ul>
+<li>Input features: Per-feeder vibration signature (FFT), feeder age (cycles), miss-pick rate
+  trend, component type.</li>
+<li>Target: Flag feeder wear pattern before first miss-pick event; predict replacement window.</li>
+<li>Alert action: Feeder-level maintenance alert in MES; DT displays feeder health heatmap.</li>
+<li>Success criterion: SMT FPY maintained ≥ 98.5% (Phase 2 target).</li>
+</ul>
+<p><strong>Model C — AMR Battery State-of-Health (DT-AMR-MIR250-01 to -12, DT-AMR-MIR100-01 to -04)</strong></p>
+<ul>
+<li>Input features: SoC trajectory per charge cycle, charge acceptance rate, ambient temperature,
+  missions per day, age in calendar days and cycle count.</li>
+<li>Target: Predict per-AMR battery replacement window 30 days in advance.</li>
+<li>Alert action: Scheduled replacement order raised in MES CMMS; DT displays SoH trend and
+  predicted end-of-life date.</li>
+<li>Success criterion: AMR availability ≥ 98.5% (Phase 2 target); zero surprise AMR failures.</li>
+</ul>
+<hr />
+<h3 id="step-22-cobot-scara-kinematics-model">Step 2.2 — Cobot &amp; SCARA Kinematics Model<a class="headerlink" href="#step-22-cobot-scara-kinematics-model" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> UR20 cobots commissioned at Z4 (Automation Milestone M2.1–M2.2)
+<strong>New Assets:</strong> UR20 cobot joints ×(number deployed), Epson SCARA G-Series joints ×(number deployed)</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add cobot joint angle (θ1–θ6), joint torque, TCP speed, and cycle time to asset manifest
+      (Phase 2 extension).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Import UR20 URDF kinematic model into DT spatial layer; link to live joint angle feed.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build Cobot Cell dashboard: cycle time trend, joint torque vs. nominal, collision zone
+      violation alerts.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Enable "virtual commissioning" mode: engineers can simulate a cobot path change in the
+      DT before executing on the live machine.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Validate Phase 2 DT data lag ≤ 500 ms (Automation Milestone M2.9).</li>
+</ul>
+<hr />
+<h3 id="step-23-ai-vision-inference-twin">Step 2.3 — AI Vision Inference Twin<a class="headerlink" href="#step-23-ai-vision-inference-twin" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> AI Vision 100% QC deployed (Automation Milestone M2.3)
+<strong>Asset:</strong> DT-PH-06 (Cognex IS9000 ×2), Z9 Final QC cameras</p>
+<p>The Phase 1 twin already streams defect class and confidence scores from Cognex IS9000 to the DT.
+In Phase 2, this data is correlated with upstream process parameters:</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build a correlation analysis pipeline: for each cosmetic defect class, automatically
+      query the upstream SMT paste volume, reflow profile, and assembly torque records for
+      that unit's serial number.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Display defect root-cause correlation matrix in DT (defect class → most likely upstream
+      cause → confidence).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Set up automated alert: if cosmetic escape rate trends above 150 PPM, the DT auto-generates
+      a root-cause investigation task in MES.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Target: cosmetic defect escape ≤ 200 PPM (Automation Milestone M2.3).</li>
+</ul>
+<hr />
+<h3 id="step-24-discrete-event-simulation-des-layer">Step 2.4 — Discrete Event Simulation (DES) Layer<a class="headerlink" href="#step-24-discrete-event-simulation-des-layer" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> Minimum 9 months of Phase 1 production data collected (used as DES calibration input)
+<strong>Tool:</strong> Integrated into Coo-Cah DT Engine simulation framework (DES + process physics models)</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Calibrate DES model using Phase 1 actual cycle times, yield rates, changeover times,
+      and AMR travel times.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build production ramp simulation: simulate ramp from 500k to 1M phones/year; identify
+      bottleneck stations before committing to a schedule change.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run product mix scenario planning: model factory OEE for different phone/earbud/watch
+      volume mix combinations.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build NPI simulation: for each new product introduction, simulate cycle time and yield
+      before physical first article runs.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Gate: all DES simulation results must be reviewed and signed off by Factory Manager and
+      Industrial Engineering before being used for live production planning decisions.</li>
+</ul>
+<hr />
+<h3 id="phase-2-deliverables-acceptance-criteria">Phase 2 Deliverables &amp; Acceptance Criteria<a class="headerlink" href="#phase-2-deliverables-acceptance-criteria" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predictive maintenance models live (3 models)</td>
+<td>M2.4: Unplanned SMT downtime &lt; 2%; AMR availability ≥ 98.5%</td>
+</tr>
+<tr>
+<td>Cobot kinematics model in DT</td>
+<td>M2.9: DT data lag ≤ 500 ms</td>
+</tr>
+<tr>
+<td>AI vision root-cause correlation</td>
+<td>Cosmetic escape ≤ 200 PPM; auto-investigation trigger working</td>
+</tr>
+<tr>
+<td>DES production ramp simulation</td>
+<td>First DES scenario reviewed and accepted by Factory Manager</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-phase-3-prescriptive-twin-20292030">5. Phase 3 — Prescriptive Twin (2029–2030)<a class="headerlink" href="#5-phase-3-prescriptive-twin-20292030" title="Permanent link">&para;</a></h2>
+<h3 id="objective_3">Objective<a class="headerlink" href="#objective_3" title="Permanent link">&para;</a></h3>
+<p>The twin recommends actions; humans approve and execute. Phase 3 supports near-lights-out SMT
+operation and adaptive AI-driven production scheduling.</p>
+<hr />
+<h3 id="step-31-lights-out-smt-simulation">Step 3.1 — Lights-Out SMT Simulation<a class="headerlink" href="#step-31-lights-out-smt-simulation" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> Lights-out SMT trial preparation (Automation Milestone M3.2, Q2 2029)</p>
+<p>Before any unmanned overnight SMT run, run thousands of simulated scenarios in the DT to find
+the edge cases that would cause an unplanned stop without a human present to intervene.</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run 1,000+ overnight scenario simulations in DES: vary reflow oven health state, feeder
+      wear state, board warpage probability, N₂ supply pressure fluctuations, power grid
+      interruptions.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify the top-5 failure modes from simulation; verify each has an automated recovery
+      path or auto-halt procedure defined in the MES.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Only proceed to physical lights-out trial (M3.2) when DT simulation shows ≥ 95% of
+      scenarios complete successfully (&lt; 1 unplanned stop per simulated 8-hour run).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Success criterion: Physical overnight OEE ≥ 87% vs daytime baseline (M3.2).</li>
+</ul>
+<hr />
+<h3 id="step-32-adaptive-wip-ai">Step 3.2 — Adaptive WIP AI<a class="headerlink" href="#step-32-adaptive-wip-ai" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> Adaptive WIP AI deployment (Automation Milestone M3.3, Q3 2029)</p>
+<p>The DT feeds real-time queue depths, machine states, and downstream order priorities into the
+AI scheduling engine, which prescribes the optimal production sequence. The MES executes the
+recommendation after supervisor approval.</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Connect DT real-time WIP queue depth data to the AI scheduling API
+      (see <code>mes-integration.md</code> §6.3).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build the Scheduling Recommendation dashboard: shows current vs. recommended production
+      sequence, predicted OEE impact of the recommendation, one-click "Accept" action.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Implement supervisor approval workflow: no AI recommendation executes without
+      Supervisor-level MES approval.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Gate: AI scheduling must demonstrate ≥ 94% on-time completion in simulation (M2.7)
+      before being enabled in prescriptive mode.</li>
+</ul>
+<hr />
+<h3 id="step-33-bess-dispatch-optimisation">Step 3.3 — BESS Dispatch Optimisation<a class="headerlink" href="#step-33-bess-dispatch-optimisation" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger:</strong> Phase 3 energy optimisation (concurrent with M3.3–M3.6)</p>
+<p>Move from reactive energy management (the EMS responds to conditions as they occur) to proactive
+(the DT prescribes the optimal BESS charge/discharge schedule 24 hours in advance).</p>
+<p>Key actions:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Integrate weather forecast API (72-hour solar irradiance forecast for Sagamu, Ogun State).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Integrate NERC/DisCo ToU tariff schedule (time-of-use pricing periods).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build BESS Dispatch Optimiser: DES simulation of 24-hour BESS dispatch scenarios;
+      outputs optimal charge/discharge schedule to minimise grid import cost.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Publish daily BESS dispatch recommendation to EMS; EMS operator reviews and approves
+      before implementation.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Target: generator run hours &lt; 100 hrs/year; grid import ≤ 15% (Phase 3 stretch target).</li>
+</ul>
+<hr />
+<h3 id="phase-3-deliverables-acceptance-criteria">Phase 3 Deliverables &amp; Acceptance Criteria<a class="headerlink" href="#phase-3-deliverables-acceptance-criteria" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lights-out SMT simulation complete</td>
+<td>1,000+ scenarios run; top-5 failure modes identified and mitigated</td>
+</tr>
+<tr>
+<td>Adaptive WIP AI live</td>
+<td>M3.3: WIP turns &gt; 8×/day; no starvation events; schedule adherence ≥ 94%</td>
+</tr>
+<tr>
+<td>BESS dispatch optimisation live</td>
+<td>Generator run hours &lt; 100 hrs/year; grid import ≤ 15%</td>
+</tr>
+<tr>
+<td>Phase 3 OEE</td>
+<td>M3.6: Blended OEE ≥ 88%; SMT OEE ≥ 92%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-immediate-actions-top-5-do-now">6. Immediate Actions — Top 5 (Do Now)<a class="headerlink" href="#6-immediate-actions-top-5-do-now" title="Permanent link">&para;</a></h2>
+<p>These five actions cost almost nothing and have the highest leverage. They must be completed
+before any factory construction or commissioning begins.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Action</th>
+<th>Owner</th>
+<th>Deadline</th>
+<th>Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Publish the asset data manifest (YAML schema for all 142 assets)</td>
+<td>Digital Mfg Team</td>
+<td>2 weeks</td>
+<td><a href="../dt-asset-manifest/"><code>dt-asset-manifest.md</code></a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Deploy DT infrastructure stack in dev mode on Rwanda cloud hub</td>
+<td>IT/OT Infra Team</td>
+<td>6 weeks</td>
+<td><a href="../dt-infrastructure/"><code>dt-infrastructure.md</code></a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Define and lock the MQTT topic namespace</td>
+<td>Digital Mfg Team</td>
+<td>4 weeks</td>
+<td><a href="../dt-mqtt-namespace/"><code>dt-mqtt-namespace.md</code></a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Embed DT edge node requirements into building services spec</td>
+<td>Factory Eng Team</td>
+<td>Before contractor appt</td>
+<td><a href="../dt-infrastructure/"><code>dt-infrastructure.md</code></a> §3</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Wire SMT Line 1 DT integration as the Phase 1 pilot</td>
+<td>Digital Mfg + MES</td>
+<td>At SMT FAT (M1.2)</td>
+<td>This document §3 Step 1.1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-key-risk-register">7. Key Risk Register<a class="headerlink" href="#7-key-risk-register" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Probability</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OT connectivity failure at commissioning — machine vendor does not provide working SECS/GEM or OPC-UA interface</td>
+<td>High</td>
+<td>High</td>
+<td>DT team present at machine FAT; connectivity verified before machines ship to Sagamu; protocol fallback (Modbus TCP) pre-agreed with vendor</td>
+</tr>
+<tr>
+<td>Schema drift — asset manifest not maintained after initial publication</td>
+<td>Medium</td>
+<td>High</td>
+<td>Manifest locked in version control; change request process enforced; quarterly manifest audit by Digital Mfg team lead</td>
+</tr>
+<tr>
+<td>Data volume exceeds edge node storage — InfluxDB retention policy not set correctly</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Phase 0 Task 0.2 includes retention policy configuration; 90-day raw edge cache as per DT data governance spec</td>
+</tr>
+<tr>
+<td>Rwanda cloud hub WAN link failure — DT loses cloud sync</td>
+<td>Low</td>
+<td>Low</td>
+<td>Edge node operates autonomously for up to 72 hours; local Grafana dashboards remain live; cloud sync resumes when link restored</td>
+</tr>
+<tr>
+<td>Phase 2 DES calibration inaccurate — DES model not trusted by Factory Manager</td>
+<td>Low</td>
+<td>High</td>
+<td>DES calibrated on minimum 9 months Phase 1 data; calibration validation report produced before DES used for planning decisions</td>
+</tr>
+<tr>
+<td>MQTT topic namespace changed after machine commissioning</td>
+<td>Low</td>
+<td>High</td>
+<td>Namespace locked in Phase 0; formal change request required post-lock; all changes logged and announced to all subscribers</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-roles-responsibilities">8. Roles &amp; Responsibilities<a class="headerlink" href="#8-roles-responsibilities" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Responsibilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Digital Manufacturing Team Lead</td>
+<td>Owns this document; governs asset manifest and MQTT namespace; approves Phase gate completions</td>
+</tr>
+<tr>
+<td>MES Team Lead</td>
+<td>Owns machine-to-MES data flows; must co-sign asset manifest; validates MES → DT sync</td>
+</tr>
+<tr>
+<td>IT/OT Infrastructure Lead</td>
+<td>Owns DT infrastructure stack deployment and operation; edge node and Rwanda cloud hub</td>
+</tr>
+<tr>
+<td>Factory Engineering Manager</td>
+<td>Embeds DT edge node requirements in building services spec; manages FAT attendance plan</td>
+</tr>
+<tr>
+<td>AI Platform Lead (Coo-Kah Group)</td>
+<td>Owns Phase 2 predictive models; integrates with Coo-Kah AI Platform</td>
+</tr>
+<tr>
+<td>Factory Manager</td>
+<td>Approves Phase gate completions; signs off DES recommendations before live use</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Asset manifest: <a href="../dt-asset-manifest/"><code>dt-asset-manifest.md</code></a></em>
+<em>MQTT namespace: <a href="../dt-mqtt-namespace/"><code>dt-mqtt-namespace.md</code></a></em>
+<em>Infrastructure &amp; network architecture: <a href="../dt-infrastructure/"><code>dt-infrastructure.md</code></a></em>
+<em>Digital twin architecture &amp; asset registry: <a href="../digital-twin/"><code>digital-twin.md</code></a></em>
+<em>Automation milestones: <a href="../automation-roadmap/"><code>automation-roadmap.md</code></a></em>
+<em>MES integration protocols: <a href="../mes-integration/"><code>mes-integration.md</code></a></em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Coo-Cah Technologies Holdings. All rights reserved. | Part of the Coo-Cah Manufacturing Ecosystem.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/oumar-code/Coo-Kah-Doks" target="_blank" rel="noopener" title="Master Repository — Coo-Kah-Doks" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

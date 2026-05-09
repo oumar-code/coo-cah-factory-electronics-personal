@@ -1,0 +1,23 @@
+/* Coo-Cah Personal Electronics Factory — MkDocs custom styles */
+
+:root {
+  --coo-cah-indigo: #3F51B5;
+  --coo-cah-indigo-light: #7986CB;
+}
+
+/* Wider table support */
+.md-content__inner table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Badge styling for status badges */
+img[alt*="Status"] {
+  margin-right: 4px;
+}
+
+/* Admonition — NCC type approval / RF compliance warning */
+.admonition.warning {
+  border-left-color: #FF9800 !important;
+}
