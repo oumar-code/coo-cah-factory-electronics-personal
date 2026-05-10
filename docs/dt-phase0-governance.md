@@ -12,12 +12,14 @@
 Phase 0 is run as a **foundation-freeze programme**, not as a broad technology build.
 The purpose is to lock the data contract, telemetry namespace, infrastructure baseline,
 spatial naming model, and facility requirements before machine commissioning begins.
+This document is the single control-tower source of truth for all Phase 0 status, blockers, and sign-off evidence.
 
 The governing principle is simple:
 
 - freeze foundational design decisions early;
 - prove the platform stack only against the frozen baseline;
 - treat sign-off as part of the deliverable, not as an afterthought.
+- track blockers only in this control register (no parallel unofficial trackers).
 
 ---
 
@@ -57,15 +59,26 @@ The governing principle is simple:
 
 ---
 
+### 4.1 Critical Path Execution Sequence (Mandatory)
+
+Execute Phase 0 tasks in this order:
+
+1. Task 0.1 — lock the asset manifest baseline.
+2. Task 0.5 — lock MQTT namespace only after Task 0.1 reaches controlled baseline.
+3. Task 0.2 and Task 0.4 in parallel — prove dev stack and issue edge-node building-services requirements against the locked baseline.
+4. Task 0.3 — complete as-built IFC/DWG import and final spatial alignment, with naming alignment enforced from the start.
+
+---
+
 ## 5. Phase 0 Control Register
 
-| Task | Deliverable | Workstream | Owner | Current Status | Main Blocker to Clear | Approval Criteria |
-|---|---|---|---|---|---|---|
-| 0.1 | [`dt-asset-manifest.md`](./dt-asset-manifest.md) | A | Digital Manufacturing + MES | Controlled draft | Complete coverage and co-sign for all 142 asset IDs | Asset coverage complete; protocol/update/range fields complete; MES Team Lead acceptance recorded |
-| 0.2 | Rwanda cloud-hub dev stack (see [`dt-infrastructure.md`](./dt-infrastructure.md)) | B | IT/OT Infrastructure | Planned | Controlled manifest/namespace baseline and deployment evidence not yet closed | Dev stack live; synthetic publishers active; first Grafana dashboards signed off; deployment runbook captured |
-| 0.3 | IFC-format BIM / 3D spatial model | C | Civil & Industrial Engineering | Planned | Final as-built issue not yet available | IFC + DWG received; zones aligned; 142 asset footprints placed; model imported into DT platform |
-| 0.4 | Building Services Specification update | C | Factory Engineering + IT/OT Infrastructure | Planned | Building-services sign-off pending before fit-out freeze | Rack, power, cooling, fibre, OT LAN, WAN, and backup requirements signed into building-services spec |
-| 0.5 | [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) | A | Digital Manufacturing | Controlled draft | Manifest alignment and retained-message policy sign-off pending | Topic hierarchy complete; QoS/retained policy agreed; FAT checklist references added; namespace locked in version control |
+| Task | Deliverable | Workstream | Accountable Owner | Required Approvers | Required Evidence | Current Status | Main Blocker to Clear | Approval Criteria |
+|---|---|---|---|---|---|---|---|---|
+| 0.1 | [`dt-asset-manifest.md`](./dt-asset-manifest.md) | A | Digital Manufacturing Team Lead | MES Team Lead | Completed 142-asset manifest + coverage review + MES co-sign record | Controlled draft | Complete coverage and co-sign for all 142 asset IDs | Asset coverage complete; protocol/update/range fields complete; MES Team Lead acceptance recorded |
+| 0.2 | Rwanda cloud-hub dev stack (see [`dt-infrastructure.md`](./dt-infrastructure.md)) | B | IT/OT Infrastructure Lead | Digital Manufacturing Team Lead | Running services evidence + synthetic publishers + signed dashboards + deployment runbook | Planned | Controlled manifest/namespace baseline and deployment evidence not yet closed | Dev stack live; synthetic publishers active; first Grafana dashboards signed off; deployment runbook captured |
+| 0.3 | IFC-format BIM / 3D spatial model | C | Civil & Industrial Engineering Lead | Digital Manufacturing Team Lead | IFC + DWG issue pack + alignment check + DT import confirmation | Planned | Final as-built issue not yet available | IFC + DWG received; zones aligned; 142 asset footprints placed; model imported into DT platform |
+| 0.4 | Building Services Specification update | C | Factory Engineering Lead | IT/OT Infrastructure Lead | Issued building-services specification with signed edge-node section | Planned | Building-services sign-off pending before fit-out freeze | Rack, power, cooling, fibre, OT LAN, WAN, and backup requirements signed into building-services spec |
+| 0.5 | [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) | A | Digital Manufacturing Team Lead | MES Team Lead | Locked namespace revision + QoS/retained policy agreement + FAT checklist references | Controlled draft | Manifest alignment and retained-message policy sign-off pending | Topic hierarchy complete; QoS/retained policy agreed; FAT checklist references added; namespace locked in version control |
 
 ---
 
@@ -91,6 +104,7 @@ The governing principle is simple:
 
 Any dependency breach that threatens manifest lock, namespace lock, dev-stack alignment, or fit-out freeze
 must be escalated in the next weekly review or earlier if it affects procurement timing.
+All blockers are recorded and cleared in Section 5 only.
 
 ---
 

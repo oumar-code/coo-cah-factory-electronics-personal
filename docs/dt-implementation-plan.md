@@ -57,10 +57,9 @@ The execution order is intentional and is not calendar-driven alone:
 
 1. Launch Phase 0 governance and track all five outputs in the Phase 0 control register.
 2. Finalise the asset manifest first; it is the anchor deliverable for every downstream DT design choice.
-3. Lock the MQTT namespace immediately after the manifest is stable enough to prevent schema drift.
-4. Run the Rwanda dev stack in parallel only against the controlled manifest/namespace baseline.
-5. Pull the edge node specification into building-services sign-off before fit-out procurement hardens.
-6. Manage BIM delivery to civil cadence, but enforce zone and asset naming alignment from the start.
+3. Lock the MQTT namespace only after Task 0.1 reaches controlled baseline.
+4. Execute Task 0.2 (Rwanda dev stack) and Task 0.4 (building-services edge requirements) in parallel against the locked manifest/namespace baseline and before fit-out procurement freeze.
+5. Complete Task 0.3 as-built BIM/IFC import and final spatial alignment, while enforcing zone and asset naming alignment from the start.
 
 The following dependency rules are mandatory:
 
@@ -78,7 +77,8 @@ completion review structure for all five Phase 0 outputs.
 
 ### Task 0.1 — Publish the Asset Data Manifest
 
-**Owner:** Digital Manufacturing Team + MES Team
+**Accountable Owner:** Digital Manufacturing Team Lead
+**Required Approver:** MES Team Lead
 **Deadline:** Before factory civil works complete (M1.1)
 **Output:** [`dt-asset-manifest.md`](./dt-asset-manifest.md) — promoted from controlled draft to locked standard
 
@@ -103,7 +103,8 @@ Key actions:
 
 ### Task 0.2 — Deploy DT Infrastructure Stack in Dev Mode
 
-**Owner:** IT/OT Infrastructure Team
+**Accountable Owner:** IT/OT Infrastructure Lead
+**Required Approver:** Digital Manufacturing Team Lead
 **Deadline:** Q3 2025 (six months before commissioning)
 **Output:** Running dev instance on Rwanda cloud hub; see [`dt-infrastructure.md`](./dt-infrastructure.md)
 
@@ -131,7 +132,8 @@ Key actions:
 
 ### Task 0.3 — Commission the BIM / 3D Spatial Model
 
-**Owner:** Civil & Industrial Engineering Team
+**Accountable Owner:** Civil & Industrial Engineering Lead
+**Required Approver:** Digital Manufacturing Team Lead
 **Deadline:** Q1 2026 (as-built, concurrent with civil construction completion)
 **Output:** IFC-format 3D model of 18,000 m² floor; registered in DT platform
 
@@ -157,7 +159,8 @@ Key actions:
 
 ### Task 0.4 — Embed DT Edge Node Requirements in Building Services Spec
 
-**Owner:** Factory Engineering Team + IT/OT Infrastructure Team
+**Accountable Owner:** Factory Engineering Lead
+**Required Approver:** IT/OT Infrastructure Lead
 **Deadline:** Before contractor appointment for fit-out (Q4 2025)
 **Output:** DT Edge Node section added to Building Services Specification
 
@@ -183,7 +186,8 @@ Key requirements to embed in the Building Services Spec:
 
 ### Task 0.5 — Define and Lock the MQTT Topic Namespace
 
-**Owner:** Digital Manufacturing Team
+**Accountable Owner:** Digital Manufacturing Team Lead
+**Required Approver:** MES Team Lead
 **Deadline:** At least 4 weeks before first machine FAT (Factory Acceptance Testing)
 **Output:** [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) — promoted from controlled draft to locked and version-controlled
 
