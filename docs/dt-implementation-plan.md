@@ -210,18 +210,20 @@ Key actions:
 
 ### Phase 0 Completion Gate
 
-Phase 0 is complete when all five tasks are done **and** verified:
+Phase 0 is complete when all five tasks are done **and** all six exit conditions are verified:
 
 - [ ] Asset manifest published and accepted by MES team lead.
 - [ ] Dev DT stack running on Rwanda cloud hub; synthetic dashboards signed off.
 - [ ] BIM model IFC file received from civil contractor and imported into DT platform.
 - [ ] Edge node requirements signed off in Building Services Spec.
 - [ ] MQTT namespace document locked in version control.
+- [ ] Residual carry-over items, if any, are assigned to named owners with due dates and tracked to closure.
 
 ### Phase 0 Close-Out Review
 
 Phase 0 closes only after a formal review chaired by the Digital Manufacturing Team Lead with the
-MES Team Lead, IT/OT Infrastructure Lead, and Factory Engineering representative. The review must:
+MES Team Lead, IT/OT Infrastructure Lead, Factory Engineering representative, and Civil & Industrial
+Engineering representative. The review must:
 
 - [ ] confirm that all task outputs satisfy the approval criteria recorded in the Phase 0 governance register;
 - [ ] confirm that the manifest, namespace, infrastructure baseline, and BIM naming model are mutually aligned;

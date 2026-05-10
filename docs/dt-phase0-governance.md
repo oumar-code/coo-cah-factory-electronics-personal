@@ -13,6 +13,7 @@ Phase 0 is run as a **foundation-freeze programme**, not as a broad technology b
 The purpose is to lock the data contract, telemetry namespace, infrastructure baseline,
 spatial naming model, and facility requirements before machine commissioning begins.
 This document is the single control-tower source of truth for all Phase 0 status, blockers, and sign-off evidence.
+It is also the gated execution tracker; no parallel tracker can be used to close Phase 0.
 
 The governing principle is simple:
 
@@ -70,6 +71,17 @@ Execute Phase 0 tasks in this order:
 
 ---
 
+### 4.2 No-Bypass Hold Points (Mandatory)
+
+The following hold points are hard gates and cannot be bypassed:
+
+1. Do not lock MQTT namespace before manifest acceptance evidence is recorded.
+2. Do not sign off synthetic dashboards before manifest + namespace alignment is confirmed.
+3. Do not freeze fit-out procurement before edge-node requirements are signed in the building-services specification.
+4. Do not run Phase 0 close-out until all evidence in Section 5 is complete and approved.
+
+---
+
 ## 5. Phase 0 Control Register
 
 | Task | Deliverable | Workstream | Accountable Owner | Required Approvers | Required Evidence | Current Status | Main Blocker to Clear | Approval Criteria |
@@ -91,6 +103,19 @@ Execute Phase 0 tasks in this order:
 | Rwanda dev stack | IT/OT Infrastructure Lead, Digital Manufacturing Team Lead | Running services, synthetic-data evidence, dashboard sign-off, runbook |
 | BIM / spatial model | Civil & Industrial Engineering Lead, Digital Manufacturing Team Lead | IFC file, zone/asset alignment check, import confirmation |
 | Building-services edge requirements | Factory Engineering Lead, IT/OT Infrastructure Lead | Issued building-services spec with DT edge node section |
+
+---
+
+## 6.1 Exit-Gate Evidence Ledger (Required for Close-Out)
+
+| Exit Gate Output | Minimum Evidence Pack | Accountable Owner |
+|---|---|---|
+| Asset manifest baseline lock | Published manifest version, coverage review, MES co-sign record | Digital Manufacturing Team Lead |
+| MQTT namespace lock | Locked namespace revision in version control, QoS/retained policy agreement, FAT checklist references | Digital Manufacturing Team Lead |
+| Rwanda dev stack proving | Running services proof, synthetic publisher proof, signed dashboard screenshots, deployment runbook | IT/OT Infrastructure Lead |
+| BIM / IFC spatial acceptance | IFC + DWG receipt record, zone/asset alignment check record, DT import confirmation | Civil & Industrial Engineering Lead |
+| Building-services edge readiness | Issued building-services specification with signed edge-node section | Factory Engineering Lead |
+| Residual carry-over control | Carry-over list with item owner, due date, and closure status for each open residual | Digital Manufacturing Team Lead |
 
 ---
 
@@ -118,6 +143,12 @@ Phase 0 closes only when all of the following are true:
 - [ ] BIM IFC file received, checked for zone/asset alignment, and imported into the DT platform.
 - [ ] Edge node requirements signed off in the Building Services Specification.
 - [ ] Residual carry-over items, if any, are assigned to named owners with due dates.
+
+### 8.1 Residual Carry-Over Log (Required If Any Item Remains Open)
+
+| Carry-Over Item | Owner | Due Date | Tracking Reference | Closure Status |
+|---|---|---|---|---|
+| _Add item if needed_ | _Name_ | _YYYY-MM-DD_ | _Issue/Doc link_ | _Open / Closed_ |
 
 ---
 
