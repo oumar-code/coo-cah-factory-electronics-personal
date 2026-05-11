@@ -140,5 +140,6 @@ Automation at the Coo-Cah Personal Electronics Factory is designed to complement
 ---
 
 *For MES integration details, refer to [`mes-integration.md`](./mes-integration.md).*
+*For M1.9 EMS policy and commissioning preconfiguration baseline, refer to [`ems-m1.9-preconfiguration.md`](./ems-m1.9-preconfiguration.md).*
 *For digital twin and simulation capabilities, refer to [`digital-twin.md`](./digital-twin.md).*
 *For CapEx investment per automation phase, refer to [`capex-opex.md`](./capex-opex.md).*

@@ -217,6 +217,7 @@ All production staff complete the Coo-Cah Manufacturing Academy 6-week onboardin
 | [`machinery.md`](./machinery.md)                 | SMT lines, phone/TWS/watch assembly, RF test, QC equipment     |
 | [`execution-plan.md`](./execution-plan.md)       | Immediate priorities, strategy execution, stage gates, governance cadence |
 | [`energy-profile.md`](./energy-profile.md)       | 550 kW demand, 850 kWp solar, 900 kWh BESS design              |
+| [`ems-m1.9-preconfiguration.md`](./ems-m1.9-preconfiguration.md) | Policy-first EMS baseline for M1.9: governance, dispatch logic, ATS rules, alerts, sandbox validation |
 | [`floor-plan.md`](./floor-plan.md)               | 18,000 m² layout with 2 SMT lines, 4 assembly areas, test zones |
 | [`automation-roadmap.md`](./automation-roadmap.md) | Phase milestones from MES foundation to lights-out SMT       |
 | [`mes-integration.md`](./mes-integration.md)     | MES data points, NCC type approval tracking, serial traceability |
