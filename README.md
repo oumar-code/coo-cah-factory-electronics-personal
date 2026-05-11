@@ -163,6 +163,7 @@
 | [docs/dt-asset-manifest.md](./docs/dt-asset-manifest.md) | Machine-readable YAML data schema for all 142 registered assets |
 | [docs/dt-mqtt-namespace.md](./docs/dt-mqtt-namespace.md) | MQTT topic hierarchy, QoS policy, broker configuration |
 | [docs/dt-infrastructure.md](./docs/dt-infrastructure.md) | InfluxDB + FastAPI + Grafana stack; OT/IT network architecture |
+| [docs/dt-phase1-software-infrastructure.md](./docs/dt-phase1-software-infrastructure.md) | Executable Phase 1 DT software infrastructure, synthetic telemetry drills, and offline simulation baseline |
 
 ---
 

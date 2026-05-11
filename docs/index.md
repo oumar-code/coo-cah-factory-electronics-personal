@@ -225,6 +225,7 @@ All production staff complete the Coo-Cah Manufacturing Academy 6-week onboardin
 | [`regulatory.md`](./regulatory.md)               | NCC type approval, SON NIS, IEC 62368-1, RoHS, REACH          |
 | [`capex-opex.md`](./capex-opex.md)               | Phase 1 CapEx ~₦28B, unit economics per product category       |
 | [`digital-twin.md`](./digital-twin.md)           | Asset registry for SMT lines, assembly robots, test equipment  |
+| [`dt-phase1-software-infrastructure.md`](./dt-phase1-software-infrastructure.md) | Executable Phase 1 DT software stack, synthetic telemetry, and offline simulation baseline |
 
 ---
 
