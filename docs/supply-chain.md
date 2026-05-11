@@ -196,9 +196,11 @@ This section operationalizes a single **Supply & Import Control Tower** that run
 
 | Milestone | Frozen Demand Package | Mandatory Commercial Lock | Exit Gate |
 |---|---|---|---|
-| M1.2 (SMT lines) | SMT line equipment balance, commissioning spares, SMT consumables | Signed PO/LC/TT (Telegraphic Transfer), agreed Incoterm, confirmed ship window | All long-lead SMT items have supplier-confirmed ship dates aligned to commissioning sequence |
-| M1.3 (AMR fleet) | 16 AMRs, charging docks, fleet licences, integration accessories | Signed PO/LC/TT (Telegraphic Transfer), agreed Incoterm, confirmed delivery/installation window | AMR hardware and software package commercially locked with install-ready ETA |
-| M1.8 (TWS/watch) | TWS/watch line components, fixtures, test assets, key imported modules | Signed PO/LC/TT (Telegraphic Transfer), agreed Incoterm, confirmed ship window | Long-lead TWS/watch imports commercially locked with milestone-aligned ETA |
+| M1.2 (SMT lines) | SMT line equipment balance, commissioning spares, SMT consumables | Signed PO/LC/TT, agreed Incoterm, confirmed ship window | All long-lead SMT items have supplier-confirmed ship dates aligned to commissioning sequence |
+| M1.3 (AMR fleet) | 16 AMRs, charging docks, fleet licences, integration accessories | Signed PO/LC/TT, agreed Incoterm, confirmed delivery/installation window | AMR hardware and software package commercially locked with install-ready ETA |
+| M1.8 (TWS/watch) | TWS/watch line components, fixtures, test assets, key imported modules | Signed PO/LC/TT, agreed Incoterm, confirmed ship window | Long-lead TWS/watch imports commercially locked with milestone-aligned ETA |
+
+`TT` = Telegraphic Transfer.
 
 Execution rules:
 
@@ -213,7 +215,9 @@ Execution rules:
 | Customs broker appointment | Two licensed brokers appointed (primary + backup) | Logistics & Compliance | Both appointments approved before first critical shipment |
 | HS code matrix | Every imported line item mapped to HS code and duty band | Logistics & Compliance + Brokers | Zero unknown HS code lines |
 | Landed-cost model | Duty, VAT, CISS, ETLS, and port/terminal costs validated | Finance + Logistics | Finance sign-off completed |
-| Pre-clearance document pack | Form M, SON (Standards Organisation of Nigeria) CoC, pre-shipment inspection, NAFDAC (National Agency for Food and Drug Administration and Control) documents where required, NCC (Nigerian Communications Commission) evidence where required | Regulatory Affairs + Trade Finance | Full pre-arrival checklist signed per shipment |
+| Pre-clearance document pack | Form M, SON CoC, pre-shipment inspection, NAFDAC documents where required, NCC evidence where required | Regulatory Affairs + Trade Finance | Full pre-arrival checklist signed per shipment |
+
+Acronyms: `SON` = Standards Organisation of Nigeria; `NAFDAC` = National Agency for Food and Drug Administration and Control; `NCC` = Nigerian Communications Commission.
 
 Control requirement: no shipment may move to customs submission without a complete document pack and approved HS classification.
 
