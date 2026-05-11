@@ -1,0 +1,160 @@
+factory: cce
+site: sag
+zones:
+  - z2
+  - z3
+  - z4
+  - z5
+  - z6
+  - z7
+  - z8
+  - z1
+  - z9
+  - z10
+  - z11
+  - amr
+  - energy
+assets:
+  - zone: z2
+    asset_id: smt-l1-reflow
+    update_frequency_s: 2
+    metrics:
+      - zone1_temp_c
+      - zone7_temp_c
+      - conveyor_speed_mm_min
+      - machine_state
+      - alarm_active
+  - zone: z3
+    asset_id: smt-l2-reflow
+    update_frequency_s: 2
+    metrics:
+      - zone1_temp_c
+      - zone7_temp_c
+      - conveyor_speed_mm_min
+      - machine_state
+      - alarm_active
+  - zone: z4
+    asset_id: ph-torque
+    instances: ["01", "02", "03", "04"]
+    update_frequency_s: 2
+    metrics:
+      - torque_nm
+      - result_ok_nok
+      - machine_state
+  - zone: z4
+    asset_id: ph-flash
+    instances: ["01", "02", "03", "04", "05", "06"]
+    update_frequency_s: 3
+    metrics:
+      - flash_result
+      - firmware_version
+      - machine_state
+  - zone: z5
+    asset_id: tws-acoustic
+    instances: ["01", "02", "03", "04", "05", "06"]
+    update_frequency_s: 3
+    metrics:
+      - sensitivity_db
+      - thd_pct
+      - pass_fail
+  - zone: z6
+    asset_id: sw-pressure
+    instances: ["01", "02"]
+    update_frequency_s: 4
+    metrics:
+      - pressure_bar
+      - pass_fail
+  - zone: z7
+    asset_id: pb-batt-tester
+    instances: ["01", "02", "03", "04", "05", "06"]
+    update_frequency_s: 3
+    metrics:
+      - capacity_mah
+      - ir_mohm
+      - overall_result
+  - zone: z8
+    asset_id: rf-cmw500
+    instances: ["01", "02"]
+    update_frequency_s: 3
+    metrics:
+      - trp_dbm
+      - tis_dbm
+      - pass_fail
+  - zone: z1
+    asset_id: vlm
+    instances: ["01", "02", "03", "04"]
+    update_frequency_s: 4
+    metrics:
+      - pick_count_shift
+      - inventory_level_pct
+  - zone: z9
+    asset_id: thermal-chamber
+    update_frequency_s: 4
+    metrics:
+      - chamber_temp_c
+      - pass_fail
+  - zone: z10
+    asset_id: checkweigh
+    instances: ["01"]
+    update_frequency_s: 3
+    metrics:
+      - weight_g
+      - pass_fail
+  - zone: z11
+    asset_id: env-sensor
+    instances: ["01", "02", "03", "04"]
+    update_frequency_s: 4
+    metrics:
+      - temperature_c
+      - humidity_pct
+  - zone: amr
+    asset_id: mir250
+    instances: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
+    update_frequency_s: 1
+    metrics:
+      - pos_x_m
+      - pos_y_m
+      - pos_theta_deg
+      - battery_soc_pct
+      - mission_status
+  - zone: amr
+    asset_id: mir100
+    instances: ["01", "02", "03", "04"]
+    update_frequency_s: 1
+    metrics:
+      - pos_x_m
+      - pos_y_m
+      - battery_soc_pct
+      - mission_status
+  - zone: amr
+    asset_id: dock
+    instances: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
+    update_frequency_s: 2
+    metrics:
+      - dock_occupied
+      - amr_soc_pct
+      - charge_current_a
+  - zone: energy
+    asset_id: pv-roof-main
+    update_frequency_s: 5
+    metrics:
+      - generation_kw
+      - irradiance_w_m2
+  - zone: energy
+    asset_id: bess-01
+    update_frequency_s: 5
+    metrics:
+      - soc_pct
+      - soh_pct
+      - charge_discharge_kw
+  - zone: energy
+    asset_id: bess-02
+    update_frequency_s: 5
+    metrics:
+      - soc_pct
+      - soh_pct
+      - charge_discharge_kw
+system_topics:
+  - cce/sag/system/oee/factory_blended
+  - cce/sag/system/energy/solar_self_sufficiency_pct
+  - cce/sag/system/amr/fleet_summary
