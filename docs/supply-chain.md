@@ -176,7 +176,7 @@ The Coo-Cah Personal Electronics Factory operates a hybrid supply chain: critica
 
 ## 8. Supply & Import Control Tower Implementation (M1.2, M1.3, M1.8)
 
-This section operationalises a single **Supply & Import Control Tower** that runs four parallel workstreams against milestone-driven gates for:
+This section operationalizes a single **Supply & Import Control Tower** that runs four parallel workstreams against milestone-driven gates for:
 
 - **M1.2:** SMT Lines 1 & 2 installed, qualified, and running production
 - **M1.3:** AMR fleet deployed and operational
@@ -202,9 +202,9 @@ This section operationalises a single **Supply & Import Control Tower** that run
 
 Execution rules:
 
-- demand packs are frozen by milestone and only changed through formal change control
-- long-lead lines are released first and tracked on a daily expedite board
-- shipment mode (sea/air) is set by milestone criticality and contingency trigger
+- Demand packs are frozen by milestone and only changed through formal change control
+- Long-lead lines are released first and tracked on a daily expedite board
+- Shipment mode (sea/air) is set by milestone criticality and contingency trigger
 
 ### 8.3 Import Compliance and Duty Optimisation Workstream
 
@@ -229,8 +229,8 @@ Control requirement: no shipment may move to customs submission without a comple
 Sandbox gate before live commissioning:
 
 - `PO -> receipt -> IQC -> release to production` flow passes end-to-end
-- no manual database intervention is required
-- traceability chain is complete and auditable
+- No manual database intervention is required
+- Traceability chain is complete and auditable
 
 ### 8.5 Intercompany and Local Contract Finalisation Workstream
 
@@ -241,7 +241,7 @@ Sandbox gate before live commissioning:
 
 Required alignment:
 
-- shuttle/milk-run logistics cadence must be contractually defined
+- Shuttle/milk-run logistics cadence must be contractually defined
 - KPI definitions must match MES dashboard metrics used in monthly governance
 
 ### 8.6 Governance Cadence and Escalation
