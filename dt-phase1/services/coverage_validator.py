@@ -2,6 +2,7 @@
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 
 import yaml
@@ -55,7 +56,7 @@ def main():
     }
 
     print(json.dumps({"gate": gate, "problems": problems}, indent=2))
-    raise SystemExit(1 if problems else 0)
+    sys.exit(1 if problems else 0)
 
 
 if __name__ == "__main__":

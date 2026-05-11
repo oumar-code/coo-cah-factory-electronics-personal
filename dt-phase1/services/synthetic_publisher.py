@@ -72,7 +72,7 @@ def main():
     parser.add_argument("--profile", required=True)
     parser.add_argument("--scenario", default="normal", choices=["normal", "warning", "alarm", "missing", "delayed", "burst", "wan_outage_recovery"])
     parser.add_argument("--duration", type=int, default=300)
-    parser.add_argument("--mqtt-host", default="")
+    parser.add_argument("--mqtt-host", default=None)
     parser.add_argument("--mqtt-port", type=int, default=1883)
     args = parser.parse_args()
 
@@ -81,7 +81,7 @@ def main():
     site = profile["site"]
 
     client = None
-    if args.mqtt_host and mqtt:
+    if mqtt and args.mqtt_host is not None:
         client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         client.connect(args.mqtt_host, args.mqtt_port, 60)
         client.loop_start()
