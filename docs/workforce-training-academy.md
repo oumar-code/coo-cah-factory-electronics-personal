@@ -78,7 +78,7 @@ The MES training modules use the deployed sandbox baseline and role model define
 
 ## 4. Six-Week Curriculum and Assessment
 
-## 4.1 Week 1 — Safety Induction and ESD Handling
+### 4.1 Week 1 — Safety Induction and ESD Handling
 
 **Core content**
 
@@ -95,7 +95,7 @@ The MES training modules use the deployed sandbox baseline and role model define
 - Written safety quiz (minimum pass mark 80%)
 - Practical ESD wrist-strap test demonstration
 
-## 4.2 Week 2 — 5S Methodology
+### 4.2 Week 2 — 5S Methodology
 
 **Core content**
 
@@ -110,7 +110,7 @@ The MES training modules use the deployed sandbox baseline and role model define
 
 - Practical walk-through of a mock station with 5 planted defects to identify and remediate
 
-## 4.3 Week 3 — MES Core Navigation and Production Orders (Sandbox)
+### 4.3 Week 3 — MES Core Navigation and Production Orders (Sandbox)
 
 **Core content**
 
@@ -121,7 +121,7 @@ The MES training modules use the deployed sandbox baseline and role model define
 - Rework event and reason-code capture
 - Shift dashboard interpretation (OEE, FPY, downtime)
 
-## 4.4 Week 4 — MES Role-Specific Deep Dives (Sandbox)
+### 4.4 Week 4 — MES Role-Specific Deep Dives (Sandbox)
 
 **Core content**
 
@@ -140,7 +140,7 @@ The MES training modules use the deployed sandbox baseline and role model define
   - release unit after rework
   - close order with complete records
 
-## 4.5 Week 5 — Quality Awareness and IPC Standards
+### 4.5 Week 5 — Quality Awareness and IPC Standards
 
 **Core content**
 
@@ -158,7 +158,7 @@ The MES training modules use the deployed sandbox baseline and role model define
 - Visual inspection practical (minimum 8/10 correct classifications)
 - 10-question IPC recognition quiz
 
-## 4.6 Week 6 — Integration, Final Assessment, and Sign-Off
+### 4.6 Week 6 — Integration, Final Assessment, and Sign-Off
 
 **Core content**
 
@@ -198,10 +198,10 @@ The MES training modules use the deployed sandbox baseline and role model define
 |---|---|
 | MES sandbox deployed | Met |
 | MES RBAC model and user accounts defined | Met |
-| Classroom and training space | Met (designation required) |
-| External IPC trainer engagement | Met (procurement action) |
-| ESD demo kit availability | Met (consumable preparation) |
-| Competency record template linkage to MES IDs | Met (HR/MES governance action) |
+| Classroom and training space | In progress (action required: designate training area) |
+| External IPC trainer engagement | In progress (action required: complete trainer procurement) |
+| ESD demo kit availability | In progress (action required: complete kit preparation) |
+| Competency record template linkage to MES IDs | In progress (action required: finalize HR/MES linkage) |
 
 ---
 
