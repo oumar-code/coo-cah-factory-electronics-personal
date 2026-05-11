@@ -153,6 +153,7 @@
 | [docs/floor-plan.md](./docs/floor-plan.md) | 18,000 m² layout with 2 SMT lines, 4 assembly areas, test zones |
 | [docs/automation-roadmap.md](./docs/automation-roadmap.md) | Phase milestones from MES foundation to lights-out SMT |
 | [docs/mes-integration.md](./docs/mes-integration.md) | MES data points, NCC type approval tracking, serial traceability |
+| [docs/mes-phase1-software-setup.md](./docs/mes-phase1-software-setup.md) | Deployable MES baseline, workflows, station map, RBAC, sandbox validation |
 | [docs/supply-chain.md](./docs/supply-chain.md) | Import logistics for chips/displays, local supply, distribution |
 | [docs/regulatory.md](./docs/regulatory.md) | NCC type approval, SON NIS, IEC 62368-1, RoHS, REACH |
 | [docs/capex-opex.md](./docs/capex-opex.md) | Phase 1 CapEx ~₦28B, unit economics per product category |

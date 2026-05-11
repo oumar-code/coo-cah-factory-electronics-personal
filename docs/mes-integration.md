@@ -10,6 +10,8 @@
 
 The Personal Electronics Factory MES is deployed as a Coo-Cah Platform module — a cloud-native MES with edge processing nodes on-site. The system handles production order management, real-time WIP tracking, full unit-level serialisation and traceability, quality management (including NCC type approval RF test result logging), energy monitoring, and AMR fleet dispatching.
 
+The deployable Phase 1 software baseline, sandbox controls, workflow rules, station map, RBAC model, dashboard scope, and validation gate are defined in the companion document [`mes-phase1-software-setup.md`](./mes-phase1-software-setup.md). This specification remains the primary reference for architecture, protocols, APIs, traceability structure, and cross-system integration.
+
 ```
                 ┌─────────────────────────────────────────────┐
                 │           Coo-Cah Cloud Platform            │
@@ -345,3 +347,4 @@ The Coo-Cah AI Platform exposes REST API endpoints consumed by the MES for AI-dr
 *For digital twin architecture, refer to [`digital-twin.md`](./digital-twin.md).*
 *For regulatory data requirements, refer to [`regulatory.md`](./regulatory.md).*
 *For supply chain ERP integration, refer to [`supply-chain.md`](./supply-chain.md).*
+*For the Phase 1 deployment baseline and sandbox readiness gate, refer to [`mes-phase1-software-setup.md`](./mes-phase1-software-setup.md).*
