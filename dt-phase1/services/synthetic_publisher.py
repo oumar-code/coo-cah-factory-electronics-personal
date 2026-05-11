@@ -89,12 +89,18 @@ def main():
     start = time.time()
     buffer = deque()
     tick = 0
+    next_emit = {}
+    assets = profile["assets"]
 
     while time.time() - start < args.duration:
         tick += 1
-        for asset in profile["assets"]:
-            if tick % max(1, int(asset["update_frequency_s"])) != 0:
+        now = time.time()
+        for idx, asset in enumerate(assets):
+            freq = float(asset.get("update_frequency_s", 1))
+            freq = max(0.1, freq)
+            if now < next_emit.get(idx, 0.0):
                 continue
+            next_emit[idx] = now + freq
 
             instances = asset.get("instances") or [None]
             for instance in instances:
