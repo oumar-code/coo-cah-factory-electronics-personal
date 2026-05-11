@@ -170,6 +170,8 @@ If any gate fails, the programme holds at current stage with corrective action a
 
 ## 8. Workforce Readiness Before Volume
 
+The machine-independent 6-week onboarding and competency gate for direct staff is defined in [`workforce-training-academy.md`](./workforce-training-academy.md) and runs under WS9.
+
 | Priority | Action | Owner | Completion Signal |
 |---|---|---|---|
 | Critical staffing | Fill production engineering, quality/regulatory, SMT maintenance, MES admin, import/compliance roles | HR + Functional Heads | All critical positions staffed |
