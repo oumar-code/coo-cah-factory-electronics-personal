@@ -174,6 +174,102 @@ The Coo-Cah Personal Electronics Factory operates a hybrid supply chain: critica
 
 ---
 
+## 8. Supply & Import Control Tower Implementation (M1.2, M1.3, M1.8)
+
+This section operationalizes a single **Supply & Import Control Tower** that runs four parallel workstreams against milestone-driven gates for:
+
+- **M1.2:** SMT Lines 1 & 2 installed, qualified, and running production
+- **M1.3:** AMR fleet deployed and operational
+- **M1.8:** TWS + Smartwatch lines at capacity with BT product approval readiness
+
+### 8.1 Control Tower Scope and Owners
+
+| Control Tower Function | Core Scope | Primary Owner | Supporting Functions |
+|---|---|---|---|
+| Milestone planning and gate control | Backward planning from M1.2/M1.3/M1.8, gate reviews, readiness decisions | PMO + Supply Chain Lead | Operations, Quality, Finance |
+| Procurement execution | Long-lead PO/LC lock, shipment booking, supplier confirmation | Procurement Lead | Trade Finance, Engineering |
+| Import compliance and duty control | HS classification, landed cost, Form M/SON/NAFDAC/NCC evidence, broker coordination | Logistics & Compliance Lead | Customs Brokers, Regulatory Affairs |
+| MES/ERP supply onboarding | Vendor master data, workflow activation, sandbox flow validation | IT/MES Lead | ERP Admin, Stores, Quality |
+| Intercompany and local contracts | Plastics and Packaging Hub SLAs, KPI clauses, contingencies | Commercial Contracts Lead | Legal, Operations, Quality |
+
+### 8.2 Milestone-Backward Demand and Procurement Lock
+
+| Milestone | Frozen Demand Package | Mandatory Commercial Lock | Exit Gate |
+|---|---|---|---|
+| M1.2 (SMT lines) | SMT line equipment balance, commissioning spares, SMT consumables | Signed PO/LC/TT, agreed Incoterm, confirmed ship window | All long-lead SMT items have supplier-confirmed ship dates aligned to commissioning sequence |
+| M1.3 (AMR fleet) | 16 AMRs, charging docks, fleet licences, integration accessories | Signed PO/LC/TT, agreed Incoterm, confirmed delivery/installation window | AMR hardware and software package commercially locked with install-ready ETA |
+| M1.8 (TWS/watch) | TWS/watch line components, fixtures, test assets, key imported modules | Signed PO/LC/TT, agreed Incoterm, confirmed ship window | Long-lead TWS/watch imports commercially locked with milestone-aligned ETA |
+
+`TT` = Telegraphic Transfer.
+
+Execution rules:
+
+- Demand packs are frozen by milestone and only changed through formal change control
+- Long-lead lines are released first and tracked on a daily expedite board
+- Shipment mode (sea/air) is set by milestone criticality and contingency trigger
+
+### 8.3 Import Compliance and Duty Optimisation Workstream
+
+| Deliverable | Minimum Requirement | Owner | Gate Condition |
+|---|---|---|---|
+| Customs broker appointment | Two licensed brokers appointed (primary + backup) | Logistics & Compliance | Both appointments approved before first critical shipment |
+| HS code matrix | Every imported line item mapped to HS code and duty band | Logistics & Compliance + Brokers | Zero unknown HS code lines |
+| Landed-cost model | Duty, VAT, CISS, ETLS, and port/terminal costs validated | Finance + Logistics | Finance sign-off completed |
+| Pre-clearance document pack | Form M, SON CoC, pre-shipment inspection, NAFDAC documents where required, NCC evidence where required | Regulatory Affairs + Trade Finance | Full pre-arrival checklist signed per shipment |
+
+Acronyms: `SON` = Standards Organisation of Nigeria; `NAFDAC` = National Agency for Food and Drug Administration and Control; `NCC` = Nigerian Communications Commission.
+
+Control requirement: no shipment may move to customs submission without a complete document pack and approved HS classification.
+
+### 8.4 MES/ERP Supplier Onboarding Workstream
+
+| Onboarding Area | Required Setup | Validation Output |
+|---|---|---|
+| Vendor master data | Approved supplier profile, lead time, MOQ, Incoterm, payment terms, compliance docs | Supplier record approved in ERP/MES |
+| Route/station linkage | Product route and receiving/IQC mapping for each supplier family | Receiving and traceability map validated |
+| Transaction workflows | PO, ASN/receipt, GRN, IQC hold/release, exception and escalation flow | Workflow test evidence archived |
+| Cross-system traceability | ERP ↔ MES data continuity from PO through receipt to release | End-to-end traceability pass |
+
+Sandbox gate before live commissioning:
+
+- `PO -> receipt -> IQC -> release to production` flow passes end-to-end
+- No manual database intervention is required
+- Traceability chain is complete and auditable
+
+### 8.5 Intercompany and Local Contract Finalisation Workstream
+
+| Contract Counterparty | Mandatory Clauses | Acceptance Gate |
+|---|---|---|
+| Coo-Cah Plastics Factory | Daily/weekly capacity, quality specs, OTIF target, PPM threshold, escalation path, penalties, change-control | Signed SLA with measurable KPI clauses and operating playbook |
+| Packaging Hub suppliers | Artwork/version control, service level, OTIF, defect threshold, contingency capacity, logistics cadence | Signed SLA with release/version governance and backup capacity commitment |
+
+Required alignment:
+
+- Shuttle/milk-run logistics cadence must be contractually defined
+- KPI definitions must match MES dashboard metrics used in monthly governance
+
+### 8.6 Governance Cadence and Escalation
+
+| Cadence | Forum | Core Focus | Required Output |
+|---|---|---|---|
+| Daily | Expedite board | PO status, shipment booking, customs blockers, onboarding blockers | Updated blocker log with owner and due date |
+| Weekly | Milestone risk review | M1.2/M1.3/M1.8 readiness, cost/risk deltas, gate risk | Escalation and recovery actions approved |
+| Monthly | Go/No-Go readiness board | Supply readiness gate decision per milestone | Formal go/no-go record |
+
+Escalation rule: any line item that threatens milestone date triggers immediate contingency action (alternate supplier, airfreight, or sequencing change) with owner and decision deadline.
+
+### 8.7 First 6 Weeks Execution Sequence
+
+| Window | Mandatory Activities | Completion Signal |
+|---|---|---|
+| Week 1 | Freeze demand packs, appoint brokers, launch HS/duty matrix, issue contract redlines | Demand baseline approved; brokers appointed; HS matrix active |
+| Week 2 | Issue critical PO/LC/TT packages, submit first Form M/SON/NAFDAC packs, begin MES/ERP vendor master loads | Critical long-lead awards placed; first compliance packs submitted |
+| Weeks 3–4 | Complete supplier sandbox onboarding, sign Plastics/Packaging contracts, confirm shipment bookings | Sandbox onboarding evidence complete; contracts signed; bookings confirmed |
+| Weeks 5–6 | Run end-to-end inbound simulation (import docs -> customs -> GRN -> IQC -> MES traceability), close residual risks | Simulation pass with closed critical gaps |
+
+---
+
 *For regulatory compliance requirements affecting supply chain, refer to [`regulatory.md`](./regulatory.md).*
 *For MES supply chain integration, refer to [`mes-integration.md`](./mes-integration.md).*
 *For CapEx and working capital analysis, refer to [`capex-opex.md`](./capex-opex.md).*
+*For programme-level control tower governance, refer to [`execution-plan.md`](./execution-plan.md).*
