@@ -85,15 +85,17 @@ Step 5: Certificate Issued — Production Authorised
 
 ### 2.4 Phase 1 NCC Type Approval Schedule
 
-| Product SKU     | Wireless Technology         | NCC Category               | Target Submission | Target Certificate |
-|-----------------|-----------------------------|----------------------------|-------------------|--------------------|
-| CCE-FP-3G       | GSM 900/1800, WCDMA B1/B8  | Mobile Handset             | Q1 2025           | Q3 2025            |
-| CCE-FP-4G       | LTE B1/B3/B8                | Mobile Handset             | Q2 2025           | Q4 2025            |
-| CCE-SP-LITE     | LTE B1/B3/B8, Wi-Fi, BT    | Smartphone                 | Q1 2025           | Q3 2025            |
-| CCE-TWS-01      | Bluetooth 5.0               | Short Range Device         | Q2 2025           | Q4 2025            |
-| CCE-SW-LITE     | Bluetooth 5.1               | Short Range Device / Watch | Q3 2025           | Q1 2026            |
-| CCE-PB-5K/10K/20K | USB-C PD (no wireless)   | N/A — no NCC TA required   | —                 | —                  |
-| CCE-ACC (USB-C Hub) | USB 3.1 (no wireless)   | N/A — no NCC TA required   | —                 | —                  |
+> ⚠️ **M1.6 Re-baseline:** The original Q3 2025 target for CCE-FP-3G and CCE-SP-LITE type approval was missed. A recovery programme is active. Recovery target: certificates issued by Q3 2026. See [`ncc-type-approval-fasttrack.md`](./ncc-type-approval-fasttrack.md) for the full fast-track programme, control tower, and execution plan.
+
+| Product SKU     | Wireless Technology         | NCC Category               | Original Submission | Recovery Submission | Recovery Certificate |
+|-----------------|------------------------------|----------------------------|---------------------|--------------------|----------------------|
+| CCE-FP-3G       | GSM 900/1800, WCDMA B1/B8  | Mobile Handset             | ~~Q1 2025~~         | 10 June 2026       | Q3 2026              |
+| CCE-SP-LITE     | LTE B1/B3/B8, Wi-Fi, BT    | Smartphone                 | ~~Q1 2025~~         | 10 June 2026       | Q3 2026              |
+| CCE-FP-4G       | LTE B1/B3/B8                | Mobile Handset             | Q2 2025             | After M1.6 closed  | Q4 2026 (target)     |
+| CCE-TWS-01      | Bluetooth 5.0               | Short Range Device         | Q2 2025             | After M1.6 closed  | Q1 2027 (target)     |
+| CCE-SW-LITE     | Bluetooth 5.1               | Short Range Device / Watch | Q3 2025             | After M1.6 closed  | Q1 2027 (target)     |
+| CCE-PB-5K/10K/20K | USB-C PD (no wireless)   | N/A — no NCC TA required   | —                   | —                  | —                    |
+| CCE-ACC (USB-C Hub) | USB 3.1 (no wireless)   | N/A — no NCC TA required   | —                   | —                  | —                    |
 
 > **SAR Testing:** All mobile phones (CCE-FP-3G, CCE-FP-4G, CCE-SP-LITE) must comply with NCC SAR limits ≤ 2.0 W/kg (head + body). SAR testing conducted by accredited laboratory and included in the Type Approval Technical File.
 

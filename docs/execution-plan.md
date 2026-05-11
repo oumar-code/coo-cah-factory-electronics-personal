@@ -39,7 +39,7 @@ Phase 2/3 automation investment remains conditional on measurable Phase 1 KPI at
 
 | Priority | Deliverable | Accountable Owner | Completion Signal |
 |---|---|---|---|
-| Regulatory gating | NCC/SON/NESREA/Factories Act submission tracker and fast-track actions | Regulatory Affairs | All launch SKU files submitted and acknowledged |
+| Regulatory gating | NCC/SON/NESREA/Factories Act submission tracker and fast-track actions — **M1.6 recovery programme running** (see [`ncc-type-approval-fasttrack.md`](./ncc-type-approval-fasttrack.md)) | Regulatory Affairs | All launch SKU files submitted and acknowledged |
 | Site/infrastructure gating | Civil/utilities readiness checklist with red/amber/green control | Engineering + Facilities | Commissioning-ready sign-off |
 | Financing gating | Funding drawdown plan linked to equipment delivery milestones | Finance + Procurement | Drawdown and supplier-credit approvals issued |
 
@@ -56,7 +56,7 @@ Stabilise compliant output at required quality and delivery levels, then expand 
 | # | Workstream | Core Scope | Accountable Owner | Gate Metrics |
 |---|---|---|---|---|
 | WS1 | Programme Re-baseline | Reality check, critical path, ownership map | PMO | Baseline approved; >95% owner assignment |
-| WS2 | Regulatory Fast-Track | NCC/SON/NESREA/Factories Act submissions, evidence packs | Regulatory Affairs | 100% launch SKU submission completeness |
+| WS2 | Regulatory Fast-Track | NCC/SON/NESREA/Factories Act submissions, evidence packs — **M1.6 overdue; recovery programme active** (see [`ncc-type-approval-fasttrack.md`](./ncc-type-approval-fasttrack.md)) | Regulatory Affairs | 100% launch SKU submission completeness |
 | WS3 | Site & Utilities Readiness | Civil closure, utilities, EHS readiness | Engineering/Facilities | Commissioning checklist pass |
 | WS4 | Financing & Commercial Controls | Drawdowns, supplier credit, payment gating | Finance | Milestone-linked cash release adherence |
 | WS5 | Long-Lead Supply Control | Long-lead PO lock, safety stock, dual-source | Supply Chain | Safety stock coverage achieved by policy |
