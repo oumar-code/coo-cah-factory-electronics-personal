@@ -196,9 +196,9 @@ This section operationalizes a single **Supply & Import Control Tower** that run
 
 | Milestone | Frozen Demand Package | Mandatory Commercial Lock | Exit Gate |
 |---|---|---|---|
-| M1.2 (SMT lines) | SMT line equipment balance, commissioning spares, SMT consumables | Signed PO/LC/TT, agreed Incoterm, confirmed ship window | All long-lead SMT items have supplier-confirmed ship dates aligned to commissioning sequence |
-| M1.3 (AMR fleet) | 16 AMRs, charging docks, fleet licences, integration accessories | Signed PO/LC/TT, agreed Incoterm, confirmed delivery/installation window | AMR hardware and software package commercially locked with install-ready ETA |
-| M1.8 (TWS/watch) | TWS/watch line components, fixtures, test assets, key imported modules | Signed PO/LC/TT, agreed Incoterm, confirmed ship window | Long-lead TWS/watch imports commercially locked with milestone-aligned ETA |
+| M1.2 (SMT lines) | SMT line equipment balance, commissioning spares, SMT consumables | Signed PO/LC/TT (Telegraphic Transfer), agreed Incoterm, confirmed ship window | All long-lead SMT items have supplier-confirmed ship dates aligned to commissioning sequence |
+| M1.3 (AMR fleet) | 16 AMRs, charging docks, fleet licences, integration accessories | Signed PO/LC/TT (Telegraphic Transfer), agreed Incoterm, confirmed delivery/installation window | AMR hardware and software package commercially locked with install-ready ETA |
+| M1.8 (TWS/watch) | TWS/watch line components, fixtures, test assets, key imported modules | Signed PO/LC/TT (Telegraphic Transfer), agreed Incoterm, confirmed ship window | Long-lead TWS/watch imports commercially locked with milestone-aligned ETA |
 
 Execution rules:
 
