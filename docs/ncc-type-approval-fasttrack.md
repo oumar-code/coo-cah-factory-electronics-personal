@@ -55,7 +55,7 @@ All planning documents, master schedules, and commercial launch plans must be up
 | Finance | Finance Controller | Application fee payment; lab fee payment; budget provision |
 | IT / MES | MES Admin | Certificate register entry; dispatch gate activation after certificate receipt |
 
-All roles must be confirmed and confirmed in writing within **3 days of programme start** (by 14 May 2026). Any vacancy blocks the programme and is escalated to the COO immediately.
+All roles must be confirmed in writing within **3 days of programme start** (by 14 May 2026). Any vacancy blocks the programme and is escalated to the COO immediately.
 
 ---
 
@@ -266,9 +266,9 @@ The 30-day sprint brings both SKU applications to portal submission. Testing and
 | Week | Dates | Key Actions | Owner | Completion Signal |
 |---|---|---|---|---|
 | Week 1 | 11–18 May 2026 | Appoint and confirm all programme owners; re-baseline M1.6 dates; create and populate Control Tower tracker; confirm SKU variants and product categories; issue dossier checklist to all owners; contact shortlisted labs for quotes and slot availability | PMO + Regulatory Affairs Lead | All owners confirmed; tracker live; labs contacted |
-| Week 2 | 18–25 May 2026 | Close all missing technical documents; complete RF spec and antenna data for both SKUs; freeze product baselines (Gate 1); collect label, manual, and packaging evidence; compare lab's document checklists against dossier; confirm SAR test methodology | RF Engineering + Product Engineering + Regulatory Affairs Lead | Gate 1 passed for both SKUs; dossier gap list reduced to zero |
+| Week 2 | 18–25 May 2026 | Close all missing technical documents; complete RF spec and antenna data for both SKUs; freeze product baselines (Gate 1 — baseline items may begin in parallel during Week 1); collect label, manual, and packaging evidence; compare lab's document checklists against dossier; confirm SAR test methodology | RF Engineering + Product Engineering + Regulatory Affairs Lead | Gate 1 passed for both SKUs; dossier gap list at zero or with named owners and day-level due dates |
 | Week 3 | 25 May – 1 June 2026 | Select primary and backup labs; book test slots for both SKUs; build and release test samples; complete Declarations of Conformity; finalize portal-ready application packs; confirm fee payment readiness; complete dossier review (Gate 2) | Regulatory Affairs Lead + QA + Finance + Legal | Gate 2 and Gate 3 passed for both SKUs; lab slots confirmed in writing |
-| Week 4 | 1–10 June 2026 | Submit both applications via NCC MTBS portal; pay application fees; receive acknowledgement; hand over samples to lab on booked test date; activate active follow-up cadence with lab and NCC | Regulatory Affairs Lead | Gate 4 passed for both SKUs; acknowledgements received; samples with lab |
+| Week 4 | 1–10 June 2026 | Submit both applications via NCC MTBS portal; pay application fees; receive acknowledgement; hand over samples to lab on booked test date; begin active follow-up cadence with lab and NCC | Regulatory Affairs Lead | Gate 4 passed for both SKUs; acknowledgements received; samples with lab |
 
 After week 4, the programme transitions to:
 
