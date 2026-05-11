@@ -33,7 +33,7 @@ Phase 1 establishes the core digital and physical automation layer: full MES dep
 | M1.3      | Q2 2025     | AMR fleet (16 units) deployed and operational                   | Planned        | AMR mission success rate         | ≥ 97% mission success rate from week 1        |
 | M1.4      | Q3 2025     | MES Phase 1 live: production order, WIP tracking, traceability  | Planned        | MES coverage (% stations)       | ≥ 90% production stations MES-connected       |
 | M1.5      | Q3 2025     | Phone assembly lines PH-1, PH-2, PH-3 at target capacity       | Planned        | Units/day vs. target             | 2,000 phones/day all 3 lines combined          |
-| M1.6      | Q3 2025     | NCC Type Approval secured for CCE-FP-3G, CCE-SP-LITE           | Planned        | NCC TA certificate issued        | Certificates issued for first 2 products       |
+| M1.6      | ~~Q3 2025~~ Q3 2026 | NCC Type Approval secured for CCE-FP-3G, CCE-SP-LITE — **Recovery active** (original target missed; see [`ncc-type-approval-fasttrack.md`](./ncc-type-approval-fasttrack.md)) | ⚠️ Overdue — Recovery Active | NCC TA certificate issued | Certificates issued for CCE-FP-3G and CCE-SP-LITE |
 | M1.7      | Q4 2025     | RF production calibration automated (MES-linked)               | Planned        | Calibration cycle time           | RF calibration < 45 sec/unit                  |
 | M1.8      | Q4 2025     | TWS + Smartwatch lines at capacity; NCC TA for BT products      | Planned        | Units/day vs. target             | 5,000 TWS pairs/day; NCC TA for CCE-TWS-01    |
 | M1.9      | Q1 2026     | BESS + Solar 850 kWp fully commissioned                         | Planned        | Solar self-sufficiency ratio     | ≥ 75% in first 3 months post-commissioning    |
