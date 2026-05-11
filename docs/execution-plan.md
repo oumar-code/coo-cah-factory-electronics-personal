@@ -60,8 +60,8 @@ Stabilise compliant output at required quality and delivery levels, then expand 
 | WS3 | Site & Utilities Readiness | Civil closure, utilities, EHS readiness | Engineering/Facilities | Commissioning checklist pass |
 | WS4 | Financing & Commercial Controls | Drawdowns, supplier credit, payment gating | Finance | Milestone-linked cash release adherence |
 | WS5 | Long-Lead Supply Control | Long-lead PO lock, safety stock, dual-source | Supply Chain | Safety stock coverage achieved by policy |
-| WS6 | Staged Commissioning Ramp | SMT → MES traceability → assembly pilot → RF/safety release | Operations + Quality | Stage-gate KPIs met before next stage |
-| WS7 | MES + Quality Traceability | Serial-level data integrity, dashboard governance | IT/MES + Quality | MES data completeness and defect visibility gates met |
+| WS6 | Staged Commissioning Ramp | MES software setup baseline → sandbox validation → SMT traceability → assembly pilot → RF/safety release | Operations + Quality | Software readiness sign-off and stage-gate KPIs met before next stage |
+| WS7 | MES + Quality Traceability | Serial-level data integrity, dashboard governance, RBAC control, audit evidence | IT/MES + Quality | MES data completeness, access-control, and defect visibility gates met |
 | WS8 | Energy & Uptime Resilience | Solar/BESS/ATS commissioning, power-quality validation, contingency plan | Energy + Maintenance | Uptime and power-quality acceptance report |
 | WS9 | Workforce Readiness | Critical hires, certification, shift accountability | HR + Operations | Competency sign-off before scale-up |
 
@@ -83,8 +83,8 @@ Any delay in these six steps blocks launch readiness.
 | Window | Key Activities | Primary Output |
 |---|---|---|
 | Weeks 1–2 | Re-baseline, integrated schedule issue, go-live wave freeze | Approved baseline package |
-| Weeks 3–6 | Regulatory submission push, long-lead PO confirmation, utilities readiness closeout | Gating register reduced to controlled residuals |
-| Weeks 7–10 | SMT line commissioning, MES core traceability validation, incoming quality hardening | Stage-1 production readiness |
+| Weeks 3–6 | Regulatory submission push, long-lead PO confirmation, MES software baseline deployment, utilities readiness closeout | Gating register reduced to controlled residuals |
+| Weeks 7–10 | Sandbox production-order validation, SMT line commissioning, MES core traceability validation, incoming quality hardening | Stage-1 production readiness |
 | Weeks 11–14 | Phone assembly pilot, RF/safety test release, containment loops | Stage-2 readiness decision |
 | Months 4–6 | Narrow launch basket ramp under KPI gates | Stable compliant output |
 | Months 7–12 | Controlled expansion (wave 2 SKUs) only after KPI stability | Throughput expansion with quality control |
@@ -106,6 +106,25 @@ Any delay in these six steps blocks launch readiness.
 2. MES traceability and test data integrity verified  
 3. Phone assembly pilot lots completed with containment controls  
 4. RF/safety lab release and launch authorisation
+
+## 5.3 MES Phase 1 Software Setup Gate
+
+Phase 1 MES software setup must be accepted before live machine commissioning. The detailed baseline is defined in [`mes-phase1-software-setup.md`](./mes-phase1-software-setup.md); the execution plan treats it as a formal gate under WS6 and WS7.
+
+| Validation Step | Required Output | Gate Owner |
+|---|---|---|
+| MES core deployed | Application, database, reporting, and identity services installed | IT/MES |
+| Master data loaded | Approved SKU, route, station, user, and reason-code baseline | IT/MES + Operations |
+| Sandbox orders simulated | Released test orders with full route execution evidence | Operations |
+| Station events simulated | Entry, exit, hold, rework, and completion events validated | IT/MES + Quality |
+| Traceability chain verified | PCB-to-shipment genealogy audit passed | Quality |
+| AMR dispatch tested | Mission creation, acknowledgement, and failure handling proven | Logistics + IT/MES |
+| EMS ingestion tested | Zone/order energy flow shown on dashboard | Energy + IT/MES |
+| RBAC verified | Role matrix and approval routing signed off | IT/MES + Compliance |
+| Dashboards reviewed | Operational and compliance dashboards accepted | Operations + Quality |
+| Go/No-Go signed | Formal readiness decision recorded | PMO + COO |
+
+No stage may proceed from sandbox to live station connection unless all critical software setup outputs are complete and signed off.
 
 ---
 
@@ -141,6 +160,7 @@ Progression from each stage to the next is **metric-gated**, not calendar-gated.
 | Compliance gate | Required approvals and certificates in place for release scope |
 | Process capability gate | FPY/OEE/defect metrics at agreed thresholds |
 | Traceability gate | Full serial-level MES and test data integrity |
+| Software setup gate | MES baseline deployed, sandbox interfaces validated, RBAC and dashboards signed off |
 | Supply gate | Long-lead and import coverage at policy levels |
 | Uptime gate | Power-quality and contingency readiness validated |
 

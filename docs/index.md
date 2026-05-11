@@ -220,6 +220,7 @@ All production staff complete the Coo-Cah Manufacturing Academy 6-week onboardin
 | [`floor-plan.md`](./floor-plan.md)               | 18,000 m² layout with 2 SMT lines, 4 assembly areas, test zones |
 | [`automation-roadmap.md`](./automation-roadmap.md) | Phase milestones from MES foundation to lights-out SMT       |
 | [`mes-integration.md`](./mes-integration.md)     | MES data points, NCC type approval tracking, serial traceability |
+| [`mes-phase1-software-setup.md`](./mes-phase1-software-setup.md) | Deployable MES baseline, workflows, station map, RBAC, sandbox validation |
 | [`supply-chain.md`](./supply-chain.md)           | Import logistics for chips/displays, local supply, distribution |
 | [`regulatory.md`](./regulatory.md)               | NCC type approval, SON NIS, IEC 62368-1, RoHS, REACH          |
 | [`capex-opex.md`](./capex-opex.md)               | Phase 1 CapEx ~₦28B, unit economics per product category       |

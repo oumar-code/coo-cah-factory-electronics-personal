@@ -81,6 +81,7 @@ nav:
       - MQTT Namespace: dt-mqtt-namespace.md
       - Infrastructure & Network: dt-infrastructure.md
     - MES Integration: mes-integration.md
+    - MES Phase 1 Software Setup: mes-phase1-software-setup.md
 
 extra:
   social:
