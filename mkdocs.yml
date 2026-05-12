@@ -84,6 +84,7 @@ nav:
       - Infrastructure & Network: dt-infrastructure.md
       - Phase 1 Software Infrastructure: dt-phase1-software-infrastructure.md
       - Sensor Registry (Canonical): sensor-map.md
+      - Sensor Registry Vendor Template: sensor-map-vendor-template.md
       - BIM Zone Boundaries: bim/zone-boundaries.md
       - BIM Asset Anchors: bim/asset-anchors.md
     - MES Integration: mes-integration.md
@@ -92,6 +93,7 @@ nav:
     - Workforce Training Academy: workforce-training-academy.md
     - Intra-Group Supply Coordination: intragroup-supply-coordination.md
     - Penetration Test Scoping: pentest-scoping.md
+    - Penetration Test Findings: pentest-findings.md
     - Gap Closure Report: gap-closure-report.md
 
 extra:
