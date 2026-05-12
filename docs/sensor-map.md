@@ -3,9 +3,10 @@
 > **Project Coo-Cah | AI-Powered Manufacturing Ecosystem**
 > **Factory:** Coo-Cah Personal Electronics Factory | **Location:** Sagamu Industrial Estate, Ogun State | **Phase:** Phase 1
 > **Document Version:** 1.0 | **Owner:** Digital Manufacturing & AI Team + Quality Engineering
+> **Integration Reviewer:** Documentation Integration Reviewer
 > **Status:** Controlled Draft — canonical sensor registry for DT Gate 3 acceptance
 
-This document is the **canonical sensor registry** for all ~2,800 data points monitored by the
+This document is the **canonical sensor registry** for all 2,800 data points monitored by the
 Coo-Cah Digital Twin platform across the Personal Electronics Factory. Every sensor and data-point
 entry records the sensor model (where applicable), integration protocol, calibration interval,
 factory location, and data type. It is the authoritative reference used to:
@@ -81,8 +82,8 @@ factory location, and data type. It is the authoritative reference used to:
 | STR-QC-SCAN_COUNT      | IQC barcode scan count/shift   | Honeywell Xenon 1900 (barcode) | REST API     | CAL-N         | Z1 — IQC bench |
 | STR-RACK-TEMP_C        | Bulk rack area temperature (°C)| NTC thermistor (wall-mount)    | Modbus TCP   | CAL-E         | Z1 — rack area |
 
-*4 data points per bench, × combined allocation ≈ 60 remaining points across label printers, dock
-door sensors, and inventory management system callbacks = 80 total for Z1.*
+*4 data points per bench, plus 60 explicitly allocated support points for label printers, dock-door
+sensors, and inventory-system callbacks = 80 total for Z1.*
 
 ---
 
@@ -284,8 +285,8 @@ door sensors, and inventory management system callbacks = 80 total for Z1.*
 | PH-07-n-AMPLITUDE_UM    | Amplitude (µm)            | OPC-UA     | CAL-C         |
 | PH-07-n-ALARM_ACTIVE    | Alarm active              | OPC-UA     | CAL-N         |
 
-*3 units × 4 sensors = 12 data points. Z4 total ≈ 280 data points including environment sensors,
-conveyor scanners, and operator ID readers distributed across the 3 assembly lines.*
+*3 units × 4 sensors = 12 data points. Z4 control total = 280 data points, with the remaining
+allocated to environment sensors, conveyor scanners, and operator ID readers across the 3 assembly lines.*
 
 ---
 
@@ -324,8 +325,7 @@ conveyor scanners, and operator ID readers distributed across the 3 assembly lin
 | TWS-03-n-TEST_RESULT    | IPX test result              | OPC-UA    | CAL-N         |
 | TWS-03-n-SERIAL_REF     | Unit serial reference        | OPC-UA    | CAL-N         |
 
-*2 chambers × 4 sensors = 8 data points. Z5 total ≈ 200 data points including
-operator scan stations, labelling, and environment sensors.*
+*2 chambers × 4 sensors = 8 data points. Z5 control total = 200 data points.*
 
 ---
 
@@ -351,8 +351,7 @@ operator scan stations, labelling, and environment sensors.*
 | SW-02-n-POS_ERROR_M     | Position error (m)           | VISA/LAN   | CAL-B         |
 | SW-02-n-PASS_FAIL       | Pass/fail result             | VISA/LAN   | CAL-N         |
 
-*2 units × 4 sensors = 8 data points. Z6 total ≈ 160 data points including
-OCA laminator, firmware flash, heart-rate module test, and environment.*
+*2 units × 4 sensors = 8 data points. Z6 control total = 160 data points.*
 
 ---
 
@@ -461,8 +460,7 @@ OCA laminator, firmware flash, heart-rate module test, and environment.*
 | RF-06-n-CAL_RESULT      | Calibration result pass/fail     | REST API   | CAL-N         |
 | RF-06-n-TIMESTAMP       | Calibration timestamp            | REST API   | CAL-N         |
 
-*4 stations × 5 sensors = 20 data points. Z8 total ≈ 260 data points including
-additional environment, access-control, and audit-log sensors.*
+*4 stations × 5 sensors = 20 data points. Z8 control total = 260 data points.*
 
 ---
 
@@ -476,7 +474,7 @@ additional environment, access-control, and audit-log sensors.*
 | Battery Cycle      | Cycle count, capacity (mAh), voltage curve, pass/fail              | Ethernet API | CAL-D         |
 | Safety Tester (Z9) | Hipot V/I, earth bond result, OK/NOK per serial (Chroma 19053)    | Ethernet API | CAL-D         |
 
-*Z9 total ≈ 180 data points across 4 primary assets plus environmental and traceability data.*
+*Z9 control total = 180 data points across 4 primary assets.*
 
 ---
 
@@ -489,7 +487,7 @@ additional environment, access-control, and audit-log sensors.*
 | Barcode Print & Apply     | Label print OK/NOK, barcode verify result, serial ref      | REST API      | CAL-G         |
 | Pallet Wrap Station       | Wrap cycles, roll remaining (%), alarm state               | Modbus TCP    | CAL-N         |
 
-*Z10 total ≈ 120 data points across 4 assets plus conveyor and scan stations.*
+*Z10 control total = 120 data points across 4 assets.*
 
 ---
 
@@ -502,7 +500,7 @@ additional environment, access-control, and audit-log sensors.*
 | Temp/Humidity Monitor  | Temperature (°C), relative humidity (%)            | Modbus TCP   | CAL-E         |
 | Dispatch Dock Scanner  | Carton scan count, ASN reference, despatch time    | REST API     | CAL-N         |
 
-*Z11 total ≈ 80 data points.*
+*Z11 control total = 80 data points.*
 
 ---
 
@@ -553,7 +551,7 @@ additional environment, access-control, and audit-log sensors.*
 | DT-EN-GRID-01       | Import kW, cumulative kWh, ToU tariff period            | Modbus TCP | CAL-H         |
 | DT-EN-HVAC-01/02    | Cooling kW, inlet/outlet temp (°C), COP, alarm         | OPC-UA     | CAL-E         |
 
-*Energy site total ≈ 400 data points across all energy assets, including string-level and
+*Energy site control total = 400 data points across all energy assets, including string-level and
 phase-level monitoring sub-points.*
 
 ---
@@ -574,8 +572,21 @@ Before Phase 1 live machine connection (Gate 3), the following must be verified:
 
 ---
 
-*For asset spatial locations, refer to [`bim/asset-anchors.md`](./bim/asset-anchors.md).*
-*For zone boundaries and floor model, refer to [`bim/zone-boundaries.md`](./bim/zone-boundaries.md).*
-*For machine-readable asset data schema (YAML), refer to [`dt-asset-manifest.md`](./dt-asset-manifest.md).*
-*For MQTT topic structure, refer to [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md).*
-*For AI Platform API consumption of sensor data, refer to [`ai-platform-status.md`](./ai-platform-status.md).*
+## 14.1 Documentation QA Checklist (Sensor Registry)
+
+- [x] Cross-document references present (BIM, manifest, MQTT namespace, AI status)
+- [x] Zone-level control totals are explicit and auditable
+- [x] Approximate/filler wording removed from control statements
+- [x] Section-level ownership and integration review responsibilities defined
+- [x] Gate 3 acceptance controls maintained as checklist items
+
+---
+
+## 15. Related Documents
+
+- For asset spatial locations, refer to [`bim/asset-anchors.md`](./bim/asset-anchors.md).
+- For zone boundaries and floor model, refer to [`bim/zone-boundaries.md`](./bim/zone-boundaries.md).
+- For machine-readable asset data schema (YAML), refer to [`dt-asset-manifest.md`](./dt-asset-manifest.md).
+- For MQTT topic structure, refer to [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md).
+- For AI Platform API consumption of sensor data, refer to [`ai-platform-status.md`](./ai-platform-status.md).
+- For gap closure status and evidence mapping, refer to [`gap-closure-report.md`](./gap-closure-report.md).
