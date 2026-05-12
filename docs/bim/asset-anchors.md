@@ -29,11 +29,43 @@ Each anchor point defines:
 | `Y (m)`        | Local northing from SW building corner                                     |
 | `Z (m)`        | Height above FFL (finished floor level); 0.000 = floor level              |
 | `Rotation (°)` | Asset heading relative to building X-axis (East); clockwise positive       |
-| `IFC GUID`     | Placeholder IFC GlobalId — to be replaced with civil-contractor-issued GUIDs at IFC delivery |
+| `IFC GUID`     | IFC GlobalId status tag; pending values are controlled and tracked to closure owner/date |
 
 All coordinates refer to the **insertion origin** of the asset — typically the geometric centre of
 the machine footprint at floor level. For overhead equipment (e.g. vision cameras), Z is the mounting
 height.
+
+---
+
+## 1.1 IFC GUID Status Control
+
+To avoid unmanaged placeholder text, all non-final IFC values in this document are treated as
+**controlled pending status tags** under the convention `{GUID-<ASSET>-REPLACE}` with:
+
+- **Owner:** Civil & Industrial Engineering Lead
+- **Integration Reviewer:** Documentation Integration Reviewer
+- **Target closure date:** 2026-06-30 (or at delivered IFC handover, whichever is earlier)
+
+Any pending tag must be replaced with the contractor-issued IFC GlobalId during Phase 0 spatial closure.
+
+---
+
+## 1.2 ID Harmonization Register (DT Manifest ↔ BIM Anchors)
+
+The BIM anchor file and the DT manifest use a small set of alternate operational IDs for grouped assets.
+This crosswalk is the authoritative mapping used for consistency checks:
+
+| DT Manifest ID | BIM Anchor ID(s) | Mapping Type |
+|---|---|---|
+| `DT-Z1-VLM-01` | `DT-STR-01` to `DT-STR-04` | 1-to-many (group to physical units) |
+| `DT-Z9-DROP-01` | `DT-QC-02` | 1-to-1 alias |
+| `DT-Z9-THERM-01` | `DT-QC-03` | 1-to-1 alias |
+| `DT-Z9-BATT-CYCLE-01` | `DT-Z9-BATT-CYCLE-01` | direct |
+| `DT-Z10-CHECKWEIGH-01` | `DT-PKG-02` | 1-to-1 alias |
+| `DT-Z10-BARCODE-01` | `DT-PKG-03` | 1-to-1 alias |
+| `DT-Z10-LABEL-01` | `DT-Z10-LABEL-01` | direct |
+| `DT-Z11-TEMP-01` | `DT-WH-04` | 1-to-1 alias |
+| `DT-Z11-PALLET-SCAN-01` | `DT-Z11-PALLET-SCAN-01` | direct |
 
 ---
 
@@ -42,7 +74,7 @@ height.
 SMT Line 1 runs along a single in-line sequence from west (PCB load) to east (unload), centred at
 Y = 10.000 m within Z2. Equipment spacing is nominally 4 m between machine centres.
 
-| Asset ID        | Asset Name                        | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)          |
+| Asset ID        | Asset Name                        | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag           |
 |-----------------|-----------------------------------|--------|--------|--------|---------|---------------------------------|
 | DT-SMT-L1-01    | DEK Horizon Screen Printer (L1)   | 40.000 | 10.000 | 0.000  | 90      | `{GUID-SMT-L1-01-REPLACE}`      |
 | DT-SMT-L1-02    | Koh Young KY8030-3 SPI (L1)       | 44.000 | 10.000 | 0.000  | 90      | `{GUID-SMT-L1-02-REPLACE}`      |
@@ -61,7 +93,7 @@ Y = 10.000 m within Z2. Equipment spacing is nominally 4 m between machine centr
 
 SMT Line 2 mirrors Line 1, centred at Y = 30.000 m within Z3.
 
-| Asset ID        | Asset Name                        | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)          |
+| Asset ID        | Asset Name                        | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag           |
 |-----------------|-----------------------------------|--------|--------|--------|---------|---------------------------------|
 | DT-SMT-L2-01    | DEK Horizon Screen Printer (L2)   | 40.000 | 30.000 | 0.000  | 90      | `{GUID-SMT-L2-01-REPLACE}`      |
 | DT-SMT-L2-02    | Koh Young KY8030-3 SPI (L2)       | 44.000 | 30.000 | 0.000  | 90      | `{GUID-SMT-L2-02-REPLACE}`      |
@@ -80,7 +112,7 @@ SMT Line 2 mirrors Line 1, centred at Y = 30.000 m within Z3.
 
 Phone Assembly contains three parallel assembly lines (PH-1, PH-2, PH-3) plus shared test and vision stations.
 
-| Asset ID    | Asset Name                          | X (m)   | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                          | X (m)   | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|-------------------------------------|---------|--------|--------|---------|------------------------------|
 | DT-PH-01    | Screen Bonding Machine (×2)         | 84.000  | 8.000  | 0.000  | 0       | `{GUID-PH-01-REPLACE}`       |
 | DT-PH-02    | Autoclave / Debubble                | 92.000  | 8.000  | 0.000  | 0       | `{GUID-PH-02-REPLACE}`       |
@@ -94,7 +126,7 @@ Phone Assembly contains three parallel assembly lines (PH-1, PH-2, PH-3) plus sh
 
 ## 5. TWS Earbuds Assembly Assets — Zone Z5
 
-| Asset ID    | Asset Name                         | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                         | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|------------------------------------|--------|--------|--------|---------|------------------------------|
 | DT-TWS-01   | Brüel & Kjær HATS Acoustic Test (×6)| 40.000| 45.000 | 0.000  | 0       | `{GUID-TWS-01-REPLACE}`      |
 | DT-TWS-02   | R&S CMW500 BT Tester (×4)          | 55.000 | 45.000 | 0.000  | 0       | `{GUID-TWS-02-REPLACE}`      |
@@ -104,7 +136,7 @@ Phone Assembly contains three parallel assembly lines (PH-1, PH-2, PH-3) plus sh
 
 ## 6. Smartwatch Assembly Assets — Zone Z6
 
-| Asset ID    | Asset Name                          | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                          | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|-------------------------------------|--------|--------|--------|---------|------------------------------|
 | DT-SW-01    | Smartwatch Pressure Test Chamber (×2)| 40.000| 65.000 | 0.000  | 0       | `{GUID-SW-01-REPLACE}`       |
 | DT-SW-02    | GPS Simulator GNSS (×2)             | 55.000 | 65.000 | 0.000  | 0       | `{GUID-SW-02-REPLACE}`       |
@@ -113,7 +145,7 @@ Phone Assembly contains three parallel assembly lines (PH-1, PH-2, PH-3) plus sh
 
 ## 7. Power Bank Assembly Assets — Zone Z7
 
-| Asset ID    | Asset Name                     | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                     | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|--------------------------------|--------|--------|--------|---------|------------------------------|
 | DT-PB-01    | Sunstone Spot Welder (×4)      | 40.000 | 85.000 | 0.000  | 0       | `{GUID-PB-01-REPLACE}`       |
 | DT-PB-02    | Chroma 17020 Battery Tester (×6)| 50.000| 85.000 | 0.000  | 0       | `{GUID-PB-02-REPLACE}`       |
@@ -126,7 +158,7 @@ Phone Assembly contains three parallel assembly lines (PH-1, PH-2, PH-3) plus sh
 RF Lab is in the NE corner (X=141–180, Y=0–18). Equipment is positioned within the primary shielded
 chamber enclosure and adjacent benching.
 
-| Asset ID    | Asset Name                          | X (m)   | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                          | X (m)   | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|-------------------------------------|---------|--------|--------|---------|------------------------------|
 | DT-RF-01    | ETS-Lindgren 7000 Chamber (×2)      | 148.000 | 8.000  | 0.000  | 0       | `{GUID-RF-01-REPLACE}`       |
 | DT-RF-02    | Benchtop RF Chamber (×2)            | 162.000 | 5.000  | 0.000  | 0       | `{GUID-RF-02-REPLACE}`       |
@@ -139,34 +171,37 @@ chamber enclosure and adjacent benching.
 
 ## 9. Final QC & Safety Test Assets — Zone Z9
 
-| Asset ID    | Asset Name (inferred from DT registry)  | X (m)   | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                              | X (m)   | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|------------------------------------------|---------|--------|--------|---------|------------------------------|
 | DT-QC-01    | Cognex In-Sight 9000 Vision Station — Z9 | 145.000 | 25.000 | 3.000  | 270     | `{GUID-QC-01-REPLACE}`       |
 | DT-QC-02    | Drop Test Rig                            | 152.000 | 28.000 | 0.000  | 0       | `{GUID-QC-02-REPLACE}`       |
 | DT-QC-03    | Thermal Cycling Chamber                  | 158.000 | 28.000 | 0.000  | 0       | `{GUID-QC-03-REPLACE}`       |
 | DT-QC-04    | Chroma 19053 Safety Tester — Z9          | 162.000 | 35.000 | 0.000  | 0       | `{GUID-QC-04-REPLACE}`       |
+| DT-Z9-BATT-CYCLE-01 | Battery Cycle Test Station        | 160.000 | 31.000 | 0.000  | 0       | `{GUID-Z9-BATT-CYCLE-01-REPLACE}` |
 
 ---
 
 ## 10. Packaging Line Assets — Zone Z10
 
-| Asset ID    | Asset Name                          | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                          | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|-------------------------------------|--------|--------|--------|---------|------------------------------|
 | DT-PKG-01   | Carton Erect & Fill Station         | 70.000 | 86.000 | 0.000  | 90      | `{GUID-PKG-01-REPLACE}`      |
 | DT-PKG-02   | Mettler Toledo Checkweigher         | 80.000 | 86.000 | 0.000  | 90      | `{GUID-PKG-02-REPLACE}`      |
 | DT-PKG-03   | Barcode Print & Apply Station       | 88.000 | 86.000 | 0.000  | 90      | `{GUID-PKG-03-REPLACE}`      |
 | DT-PKG-04   | Pallet Wrap / Shrink Station        | 100.000| 86.000 | 0.000  | 90      | `{GUID-PKG-04-REPLACE}`      |
+| DT-Z10-LABEL-01 | Label Verification Station       | 92.000 | 86.000 | 0.000  | 90      | `{GUID-Z10-LABEL-01-REPLACE}` |
 
 ---
 
 ## 11. FG Warehouse Assets — Zone Z11
 
-| Asset ID    | Asset Name                          | X (m)   | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                          | X (m)   | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|-------------------------------------|---------|--------|--------|---------|------------------------------|
 | DT-WH-01    | Pallet Racking Bay (selective) ×n   | 115.000 | 60.000 | 0.000  | 0       | `{GUID-WH-01-REPLACE}`       |
 | DT-WH-02    | AMR Pallet Lane Marker Set          | 115.000 | 80.000 | 0.000  | 0       | `{GUID-WH-02-REPLACE}`       |
 | DT-WH-03    | Dispatch Staging Dock               | 175.000 | 55.000 | 0.000  | 90      | `{GUID-WH-03-REPLACE}`       |
 | DT-WH-04    | Temp/Humidity Monitor (FG Area)     | 145.000 | 75.000 | 2.500  | 0       | `{GUID-WH-04-REPLACE}`       |
+| DT-Z11-PALLET-SCAN-01 | Pallet Scan Station         | 171.000 | 55.000 | 0.000  | 90      | `{GUID-Z11-PALLET-SCAN-01-REPLACE}` |
 
 ---
 
@@ -181,7 +216,7 @@ the DT model.
 
 AMR charging docks for MiR250 fleet are located along the north face of Z4 (Y ≈ 34 m):
 
-| Asset ID               | Home Dock X (m) | Home Dock Y (m) | Z (m) | IFC GUID (placeholder)          |
+| Asset ID               | Home Dock X (m) | Home Dock Y (m) | Z (m) | IFC GUID / Status Tag           |
 |------------------------|-----------------|-----------------|-------|---------------------------------|
 | DT-AMR-MIR250-01       | 78.000          | 34.500          | 0.000 | `{GUID-AMR-MIR250-01-REPLACE}`  |
 | DT-AMR-MIR250-02       | 81.000          | 34.500          | 0.000 | `{GUID-AMR-MIR250-02-REPLACE}`  |
@@ -200,7 +235,7 @@ AMR charging docks for MiR250 fleet are located along the north face of Z4 (Y �
 
 MiR100 docks are in the Z1 stores area:
 
-| Asset ID               | Home Dock X (m) | Home Dock Y (m) | Z (m) | IFC GUID (placeholder)         |
+| Asset ID               | Home Dock X (m) | Home Dock Y (m) | Z (m) | IFC GUID / Status Tag          |
 |------------------------|-----------------|-----------------|-------|--------------------------------|
 | DT-AMR-MIR100-01       | 5.000           | 10.000          | 0.000 | `{GUID-AMR-MIR100-01-REPLACE}` |
 | DT-AMR-MIR100-02       | 8.000           | 10.000          | 0.000 | `{GUID-AMR-MIR100-02-REPLACE}` |
@@ -211,7 +246,7 @@ MiR100 docks are in the Z1 stores area:
 
 18 charging-dock positions distributed across Z1, Z4, and Z11:
 
-| Asset ID             | X (m)   | Y (m)   | Z (m) | Zone | IFC GUID (placeholder)       |
+| Asset ID             | X (m)   | Y (m)   | Z (m) | Zone | IFC GUID / Status Tag        |
 |----------------------|---------|---------|-------|------|------------------------------|
 | DT-AMR-DOCK-01       | 5.000   | 10.000  | 0.000 | Z1   | `{GUID-AMR-DOCK-01-REPLACE}` |
 | DT-AMR-DOCK-02       | 8.000   | 10.000  | 0.000 | Z1   | `{GUID-AMR-DOCK-02-REPLACE}` |
@@ -239,7 +274,7 @@ MiR100 docks are in the Z1 stores area:
 Energy assets are distributed across multiple roof, yard, and utility areas. Coordinates are relative
 to the same building origin; roof-mounted assets use Z > 0.
 
-| Asset ID          | Asset Name                           | X (m)   | Y (m)  | Z (m)  | Zone / Location     | IFC GUID (placeholder)          |
+| Asset ID          | Asset Name                           | X (m)   | Y (m)  | Z (m)  | Zone / Location     | IFC GUID / Status Tag           |
 |-------------------|--------------------------------------|---------|--------|--------|---------------------|---------------------------------|
 | DT-EN-PV-01       | Solar PV Array — Main Roof (620 kWp) | 90.000  | 50.000 | 9.000  | Factory Roof        | `{GUID-EN-PV-01-REPLACE}`       |
 | DT-EN-PV-02       | Solar PV Array — Warehouse (110 kWp) | 143.000 | 75.000 | 11.000 | Warehouse Roof      | `{GUID-EN-PV-02-REPLACE}`       |
@@ -259,28 +294,35 @@ to the same building origin; roof-mounted assets use Z > 0.
 
 ## 14. Component Stores Assets — Zone Z1
 
-| Asset ID    | Asset Name                          | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID (placeholder)       |
+| Asset ID    | Asset Name                          | X (m)  | Y (m)  | Z (m)  | Rot (°) | IFC GUID / Status Tag        |
 |-------------|-------------------------------------|--------|--------|--------|---------|------------------------------|
 | DT-STR-01   | Modula VLM Unit 1                   | 8.000  | 20.000 | 0.000  | 0       | `{GUID-STR-01-REPLACE}`      |
 | DT-STR-02   | Modula VLM Unit 2                   | 12.000 | 20.000 | 0.000  | 0       | `{GUID-STR-02-REPLACE}`      |
 | DT-STR-03   | Modula VLM Unit 3                   | 16.000 | 20.000 | 0.000  | 0       | `{GUID-STR-03-REPLACE}`      |
 | DT-STR-04   | Modula VLM Unit 4                   | 20.000 | 20.000 | 0.000  | 0       | `{GUID-STR-04-REPLACE}`      |
+| DT-Z1-VLM-01 | Modula VLM Group Anchor             | 14.000 | 20.000 | 0.000  | 0       | `{GUID-Z1-VLM-01-REPLACE}`   |
 
 ---
 
-## 15. Asset Anchor Acceptance Checklist
+## 15. Asset Anchor Acceptance Register
 
-- [ ] All 142 registered asset IDs from `digital-twin.md` have an anchor entry in this document
-- [ ] IFC GUID placeholders replaced with civil-contractor-issued GUIDs from delivered IFC file
-- [ ] Coordinates verified against physical equipment placement during commissioning survey
-- [ ] AMR home-dock positions verified against MiR Fleet map data
-- [ ] Energy asset (roof/yard) anchor Z values confirmed from structural drawings
-- [ ] Any deviations from planned coordinates > 200 mm documented as change requests
-- [ ] Anchor file version and SHA-256 hash of corresponding IFC file recorded in Phase 0 register
-- [ ] DT platform import test: all 142 asset icons render at correct positions in 3D floor view
+| Control | Status | Owner | Due Date |
+|---|---|---|---|
+| All 142 registered assets mapped to anchors directly or through the ID harmonization register | ✅ Complete (mapping established) | Digital Manufacturing Team | 2026-05-12 |
+| Pending IFC GUID status tags replaced with delivered contractor IFC GlobalIds | ⏳ In progress | Civil & Industrial Engineering Lead | 2026-06-30 |
+| Coordinates verified against commissioning survey | ⏳ In progress | Civil & Industrial Engineering Lead | 2026-06-30 |
+| AMR home-dock positions verified against MiR Fleet map data | ⏳ In progress | AMR / Logistics Engineering Lead | 2026-06-15 |
+| Energy asset Z-values verified from structural drawings | ⏳ In progress | Civil Engineering Lead | 2026-06-15 |
+| Deviations > 200 mm recorded via change request register | ⏳ In progress | PMO + Digital Manufacturing Team | 2026-06-30 |
+| Anchor file version and IFC SHA-256 hash recorded in Phase 0 register | ⏳ In progress | Documentation Integration Reviewer | 2026-06-30 |
+| DT platform import test renders all planned asset icons in 3D floor view | ⏳ In progress | Digital Manufacturing Team | 2026-06-30 |
 
 ---
 
-*For zone boundary coordinates and IFC CRS reference, refer to [`zone-boundaries.md`](./zone-boundaries.md).*
-*For the asset registry and DT status, refer to [`digital-twin.md`](../digital-twin.md).*
-*For sensor data schemas for each asset, refer to [`dt-asset-manifest.md`](../dt-asset-manifest.md).*
+## Related Documents
+
+- For zone boundary coordinates and IFC CRS reference, refer to [`zone-boundaries.md`](./zone-boundaries.md).
+- For the asset registry and DT status, refer to [`digital-twin.md`](../digital-twin.md).
+- For sensor data schemas for each asset, refer to [`dt-asset-manifest.md`](../dt-asset-manifest.md).
+- For canonical sensor coverage and calibration controls, refer to [`../sensor-map.md`](../sensor-map.md).
+- For closure tracking of document gaps, refer to [`../gap-closure-report.md`](../gap-closure-report.md).

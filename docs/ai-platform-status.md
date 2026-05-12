@@ -176,6 +176,10 @@ For each endpoint, the following must be completed before transitioning from STU
 
 ---
 
-*For AI API contract specifications, refer to [`mes-integration.md`](./mes-integration.md) §6.*
-*For the MES phase 1 software setup and sandbox gate, refer to [`mes-phase1-software-setup.md`](./mes-phase1-software-setup.md).*
-*For sensor data consumed by the AI Platform, refer to [`sensor-map.md`](./sensor-map.md).*
+## 7. Related Documents
+
+- For AI API contract specifications, refer to [`mes-integration.md`](./mes-integration.md) §6.
+- For the MES phase 1 software setup and sandbox gate, refer to [`mes-phase1-software-setup.md`](./mes-phase1-software-setup.md).
+- For sensor data consumed by the AI Platform, refer to [`sensor-map.md`](./sensor-map.md).
+- For penetration test scope affecting API exposure and security controls, refer to [`pentest-scoping.md`](./pentest-scoping.md).
+- For documentation gap-closure status and evidence mapping, refer to [`gap-closure-report.md`](./gap-closure-report.md).
