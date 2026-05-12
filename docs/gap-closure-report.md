@@ -44,12 +44,15 @@
 
 ---
 
-## 4. Two-Pass Execution Record
+## 4. Execution Record
 
 | Pass | Scope | Status |
 |---|---|---|
 | Pass 1 | BIM anchors completion controls and consistency checks | ✅ Completed |
 | Pass 2 | Sensor registry wording hardening and cross-checkable total controls | ✅ Completed |
+| Pass 7 | BIM anchors — IFC GUID delivery: IFC file requested from BIM/facilities team; extraction workflow pre-staged (`scripts/extract-ifc-guids.py`); GUID replacement blocked on IFC file delivery (target: 2026-06-30) | ⏳ In progress — awaiting IFC file |
+| Pass 8 | Sensor registry — MES vendor export: vendor schema template created (`sensor-map-vendor-template.md`), sent to MES vendor 2026-05-12; ~2,800-row population blocked on vendor export delivery (required by: 2026-06-15) | ⏳ In progress — awaiting vendor export |
+| Pass 9 | Pentest — engagement kick-off: findings register stub created (`pentest-findings.md`); staging environment confirmation and SIEM triage alignment in progress; kick-off meeting scheduled 2026-05-20 | ⏳ In progress — kick-off 2026-05-20 |
 
 ---
 
@@ -60,6 +63,9 @@
 - [x] Approximate-total wording removed from sensor control statements
 - [x] Section-level ownership/sign-off control present in updated docs
 - [x] MkDocs navigation includes all new/active governance docs
+- [x] IFC GUID extraction workflow pre-staged (`scripts/extract-ifc-guids.py`)
+- [x] MES vendor sensor export schema template created and sent (`sensor-map-vendor-template.md`)
+- [x] Pentest findings register stub created (`pentest-findings.md`); staging readiness and SIEM triage alignment tracked within
 
 ---
 
@@ -72,8 +78,10 @@
 | `docs/supply-chain.md` | Supply Chain & Procurement Lead | Documentation Integration Reviewer |
 | `docs/bim/asset-anchors.md` | Civil & Industrial Engineering Lead + Digital Manufacturing Team | Documentation Integration Reviewer |
 | `docs/sensor-map.md` | Digital Manufacturing & AI Team + Quality Engineering | Documentation Integration Reviewer |
+| `docs/sensor-map-vendor-template.md` | Digital Manufacturing & AI Team Lead | Documentation Integration Reviewer |
 | `docs/intragroup-supply-coordination.md` | Supply Chain Lead + Commercial Contracts Lead | Documentation Integration Reviewer |
 | `docs/pentest-scoping.md` | IT/OT Security Lead + MES Team Lead | Documentation Integration Reviewer |
+| `docs/pentest-findings.md` | IT/OT Security Lead | Documentation Integration Reviewer |
 
 ---
 
@@ -102,3 +110,5 @@
 - [`supply-chain.md`](./supply-chain.md)
 - [`intragroup-supply-coordination.md`](./intragroup-supply-coordination.md)
 - [`pentest-scoping.md`](./pentest-scoping.md)
+- [`pentest-findings.md`](./pentest-findings.md)
+- [`sensor-map-vendor-template.md`](./sensor-map-vendor-template.md)
