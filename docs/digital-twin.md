@@ -13,6 +13,9 @@
 > - [`dt-asset-manifest.md`](./dt-asset-manifest.md) — Machine-readable YAML schema for all 142 registered assets
 > - [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md) — MQTT topic namespace and broker configuration
 > - [`dt-infrastructure.md`](./dt-infrastructure.md) — Infrastructure stack and OT/IT network architecture
+> - [`bim/zone-boundaries.md`](./bim/zone-boundaries.md) — BIM zone boundary definitions (IFC coordinates, zone IDs) for 3D floor model load
+> - [`bim/asset-anchors.md`](./bim/asset-anchors.md) — BIM asset anchor points for all 142 registered assets (x, y, z, rotation)
+> - [`sensor-map.md`](./sensor-map.md) — Canonical sensor registry: model, protocol, calibration interval, location for all ~2,800 data points
 
 ---
 
@@ -117,6 +120,16 @@ The Coo-Cah Personal Electronics Factory Digital Twin is a live, synchronised vi
 
 ## 3. Sensor Coverage Map
 
+> **Canonical sensor registry:** Full sensor detail (model, protocol, calibration interval, physical
+> location per sensor across all ~2,800 data points) is defined in [`sensor-map.md`](./sensor-map.md).
+> That document is the Gate 3 acceptance reference for sensor coverage. The zone-level summary table
+> below provides an overview only.
+>
+> **3D floor model inputs:** Zone boundary coordinates and IFC definitions for the DT platform are
+> in [`bim/zone-boundaries.md`](./bim/zone-boundaries.md). Physical anchor points for all 142 assets
+> are in [`bim/asset-anchors.md`](./bim/asset-anchors.md). Both files are required for the DT
+> platform 3D floor model load and must be accepted before Phase 0 spatial closure.
+
 ### 3.1 Zone-Level Sensor Density
 
 | Zone | Zone Name             | Assets Monitored | Data Points | Primary Sensor Types                              |
@@ -206,3 +219,6 @@ The Coo-Cah Personal Electronics Factory Digital Twin is a live, synchronised vi
 *For the asset data manifest (YAML schema), refer to [`dt-asset-manifest.md`](./dt-asset-manifest.md).*
 *For the MQTT topic namespace, refer to [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md).*
 *For infrastructure and network architecture, refer to [`dt-infrastructure.md`](./dt-infrastructure.md).*
+*For BIM zone boundaries and IFC floor model, refer to [`bim/zone-boundaries.md`](./bim/zone-boundaries.md).*
+*For BIM asset anchor points, refer to [`bim/asset-anchors.md`](./bim/asset-anchors.md).*
+*For the canonical sensor registry (~2,800 data points), refer to [`sensor-map.md`](./sensor-map.md).*

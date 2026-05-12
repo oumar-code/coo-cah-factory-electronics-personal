@@ -348,3 +348,5 @@ The Coo-Cah AI Platform exposes REST API endpoints consumed by the MES for AI-dr
 *For regulatory data requirements, refer to [`regulatory.md`](./regulatory.md).*
 *For supply chain ERP integration, refer to [`supply-chain.md`](./supply-chain.md).*
 *For the Phase 1 deployment baseline and sandbox readiness gate, refer to [`mes-phase1-software-setup.md`](./mes-phase1-software-setup.md).*
+*For AI Platform deployment status and stub/production endpoint confirmation, refer to [`ai-platform-status.md`](./ai-platform-status.md).*
+*For the penetration test scoping and third-party engagement, refer to [`pentest-scoping.md`](./pentest-scoping.md).*

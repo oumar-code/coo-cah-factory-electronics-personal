@@ -83,9 +83,15 @@ nav:
       - MQTT Namespace: dt-mqtt-namespace.md
       - Infrastructure & Network: dt-infrastructure.md
       - Phase 1 Software Infrastructure: dt-phase1-software-infrastructure.md
+      - Sensor Registry (Canonical): sensor-map.md
+      - BIM Zone Boundaries: bim/zone-boundaries.md
+      - BIM Asset Anchors: bim/asset-anchors.md
     - MES Integration: mes-integration.md
     - MES Phase 1 Software Setup: mes-phase1-software-setup.md
+    - AI Platform Status: ai-platform-status.md
     - Workforce Training Academy: workforce-training-academy.md
+    - Intra-Group Supply Coordination: intragroup-supply-coordination.md
+    - Penetration Test Scoping: pentest-scoping.md
 
 extra:
   social:
