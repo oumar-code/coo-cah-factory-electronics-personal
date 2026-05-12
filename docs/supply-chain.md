@@ -273,3 +273,4 @@ Escalation rule: any line item that threatens milestone date triggers immediate 
 *For MES supply chain integration, refer to [`mes-integration.md`](./mes-integration.md).*
 *For CapEx and working capital analysis, refer to [`capex-opex.md`](./capex-opex.md).*
 *For programme-level control tower governance, refer to [`execution-plan.md`](./execution-plan.md).*
+*For confirmed intra-group supply coordination status (Plastics volume confirmation + BMS PCB design sign-off), refer to [`intragroup-supply-coordination.md`](./intragroup-supply-coordination.md).*
