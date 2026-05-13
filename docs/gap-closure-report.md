@@ -19,12 +19,15 @@
 
 ---
 
-## 2. Primary Unresolved Risk Area (Before This Closure Pass)
+## 2. Primary Unresolved Risk Areas (Current)
 
-| Area | Risk Previously Observed |
+| Area | Current Open Risk |
 |---|---|
-| `docs/bim/asset-anchors.md` | Placeholder-oriented IFC GUID treatment and unresolved acceptance checklist state |
-| `docs/sensor-map.md` | Approximate language and aggregate filler wording that reduced auditability of totals |
+| `docs/bim/zone-boundaries.md` | Final zone boundary coordinates and z-range verification remain dependent on accepted IFC handover |
+| `docs/bim/asset-anchors.md` | IFC GUID replacement and final physical anchor verification remain open pending IFC acceptance |
+| `docs/sensor-map.md` | Full registry population is blocked on MES vendor sensor inventory export acceptance |
+| `docs/pentest-scoping.md` + `docs/pentest-findings.md` | Pentest execution and findings capture/remediation tracking are not yet closed |
+| `docs/ai-platform-status.md` | Endpoint stubs are active, but production go-live and operational sign-off remain open |
 
 ---
 
@@ -53,6 +56,8 @@
 | Pass 7 | BIM anchors — IFC GUID delivery: IFC file requested from BIM/facilities team; extraction workflow pre-staged (`scripts/extract-ifc-guids.py`); GUID replacement blocked on IFC file delivery (target: 2026-06-30) | ⏳ In progress — awaiting IFC file |
 | Pass 8 | Sensor registry — MES vendor export: vendor schema template created (`sensor-map-vendor-template.md`), sent to MES vendor 2026-05-12; ~2,800-row population blocked on vendor export delivery (required by: 2026-06-15) | ⏳ In progress — awaiting vendor export |
 | Pass 9 | Pentest — engagement kick-off: findings register stub created (`pentest-findings.md`); staging environment confirmation and SIEM triage alignment in progress; kick-off meeting scheduled 2026-05-20 | ⏳ In progress — kick-off 2026-05-20 |
+| Pass 10 | AI platform production go-live: endpoint stubs validated; production model cutover gates, rollback controls, and operational sign-off tracked in the readiness programme | ⏳ In progress — production go-live pending |
+| Pass 11 | Integrated closure board and dependency-driven execution sequencing documented in `bim-simulation-readiness-program.md` with explicit owners, due dates, and entry/exit gates for all five open items | ✅ Completed |
 
 ---
 
@@ -102,6 +107,7 @@
 ## Related Documents
 
 - [`digital-twin.md`](./digital-twin.md)
+- [`bim-simulation-readiness-program.md`](./bim-simulation-readiness-program.md)
 - [`dt-asset-manifest.md`](./dt-asset-manifest.md)
 - [`bim/asset-anchors.md`](./bim/asset-anchors.md)
 - [`sensor-map.md`](./sensor-map.md)

@@ -135,6 +135,7 @@ Digital Manufacturing Team Lead before the DT platform 3D model is accepted for 
 ---
 
 *For asset spatial anchor points within each zone, refer to [`asset-anchors.md`](./asset-anchors.md).*
+*For integrated dependency gates and closure sequencing, refer to [`../bim-simulation-readiness-program.md`](../bim-simulation-readiness-program.md).*
 *For the full asset registry with DT status, refer to [`digital-twin.md`](../digital-twin.md).*
 *For Phase 0 governance sign-off controls, refer to [`dt-phase0-governance.md`](../dt-phase0-governance.md).*
 *For DT implementation task context (Task 0.3), refer to [`dt-implementation-plan.md`](../dt-implementation-plan.md).*
