@@ -56,7 +56,7 @@ This document operationalises the open readiness items tracked in
 
 | Required Field | Requirement |
 |---|---|
-| IFC schema | IFC4 (`IFC 4.0`) |
+| IFC schema | IFC4 |
 | Origin/CRS | Must match [`bim/zone-boundaries.md`](./bim/zone-boundaries.md) Section 1 |
 | Naming | Zone and asset naming aligned with DT IDs and BIM labels |
 | Integrity | SHA-256 hash recorded in governance register |
