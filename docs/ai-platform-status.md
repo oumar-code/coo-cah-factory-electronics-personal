@@ -182,4 +182,5 @@ For each endpoint, the following must be completed before transitioning from STU
 - For the MES phase 1 software setup and sandbox gate, refer to [`mes-phase1-software-setup.md`](./mes-phase1-software-setup.md).
 - For sensor data consumed by the AI Platform, refer to [`sensor-map.md`](./sensor-map.md).
 - For penetration test scope affecting API exposure and security controls, refer to [`pentest-scoping.md`](./pentest-scoping.md).
+- For integrated closure gates and production-readiness sequencing, refer to [`bim-simulation-readiness-program.md`](./bim-simulation-readiness-program.md).
 - For documentation gap-closure status and evidence mapping, refer to [`gap-closure-report.md`](./gap-closure-report.md).

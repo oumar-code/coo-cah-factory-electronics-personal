@@ -589,4 +589,5 @@ Before Phase 1 live machine connection (Gate 3), the following must be verified:
 - For machine-readable asset data schema (YAML), refer to [`dt-asset-manifest.md`](./dt-asset-manifest.md).
 - For MQTT topic structure, refer to [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md).
 - For AI Platform API consumption of sensor data, refer to [`ai-platform-status.md`](./ai-platform-status.md).
+- For integrated dependency gates and closure sequencing, refer to [`bim-simulation-readiness-program.md`](./bim-simulation-readiness-program.md).
 - For gap closure status and evidence mapping, refer to [`gap-closure-report.md`](./gap-closure-report.md).

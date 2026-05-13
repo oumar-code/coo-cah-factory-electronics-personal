@@ -325,4 +325,5 @@ to the same building origin; roof-mounted assets use Z > 0.
 - For the asset registry and DT status, refer to [`digital-twin.md`](../digital-twin.md).
 - For sensor data schemas for each asset, refer to [`dt-asset-manifest.md`](../dt-asset-manifest.md).
 - For canonical sensor coverage and calibration controls, refer to [`../sensor-map.md`](../sensor-map.md).
+- For integrated dependency gates and closure sequencing, refer to [`../bim-simulation-readiness-program.md`](../bim-simulation-readiness-program.md).
 - For closure tracking of document gaps, refer to [`../gap-closure-report.md`](../gap-closure-report.md).

@@ -78,6 +78,7 @@ nav:
     - Digital Twin:
       - Architecture & Asset Registry: digital-twin.md
       - Implementation Plan: dt-implementation-plan.md
+      - BIM & Simulation Readiness Program: bim-simulation-readiness-program.md
       - Phase 0 Governance Register: dt-phase0-governance.md
       - Asset Data Manifest: dt-asset-manifest.md
       - MQTT Namespace: dt-mqtt-namespace.md
