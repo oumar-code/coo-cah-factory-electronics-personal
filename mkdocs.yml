@@ -1,25 +1,27 @@
 site_name: Coo-Cah Personal Electronics Factory
 site_description: >
-  Tier 1 Electronics Vertical — Blueprint, operational docs & AI-integration specs for the
-  Coo-Cah Personal Electronics Factory (Sagamu, Ogun State, Nigeria). Manufactures smartphones,
-  feature phones, TWS earbuds, smartwatches, power banks & PCBs.
+  Blueprint, operational docs & AI-integration specifications for the Coo-Cah Personal Electronics
+  Factory (Sagamu Industrial Estate, Ogun State, Nigeria). Tier 1 Critical Infrastructure
+  — Coo-Cah Technologies Holdings.
+site_author: Coo-Cah Technologies Holdings
 site_url: https://oumar-code.github.io/coo-cah-factory-electronics-personal/
-repo_url: https://github.com/oumar-code/coo-cah-factory-electronics-personal
+
 repo_name: oumar-code/coo-cah-factory-electronics-personal
+repo_url: https://github.com/oumar-code/coo-cah-factory-electronics-personal
 edit_uri: edit/main/docs/
 
 theme:
   name: material
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: deep-purple
+      accent: purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: deep-purple
+      accent: purple
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -28,8 +30,8 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - search.highlight
     - search.suggest
+    - search.highlight
     - content.code.copy
     - content.tabs.link
   icon:
@@ -65,46 +67,21 @@ nav:
   - Home: index.md
   - Master Repo Reference: master-repo-ref.md
   - Factory Docs:
-    - Execution Plan: execution-plan.md
     - Machinery & Equipment: machinery.md
     - Energy Profile: energy-profile.md
-    - EMS M1.9 Preconfiguration: ems-m1.9-preconfiguration.md
     - Floor Plan: floor-plan.md
     - Automation Roadmap: automation-roadmap.md
     - Supply Chain: supply-chain.md
     - Regulatory & Compliance: regulatory.md
-    - NCC TA Fast-Track (M1.6): ncc-type-approval-fasttrack.md
     - CapEx / OpEx: capex-opex.md
-    - Digital Twin:
-      - Architecture & Asset Registry: digital-twin.md
-      - Implementation Plan: dt-implementation-plan.md
-      - BIM & Simulation Readiness Program: bim-simulation-readiness-program.md
-      - Phase 0 Governance Register: dt-phase0-governance.md
-      - Asset Data Manifest: dt-asset-manifest.md
-      - MQTT Namespace: dt-mqtt-namespace.md
-      - Infrastructure & Network: dt-infrastructure.md
-      - Phase 1 Software Infrastructure: dt-phase1-software-infrastructure.md
-      - Sensor Registry (Canonical): sensor-map.md
-      - Sensor Registry Vendor Template: sensor-map-vendor-template.md
-      - BIM Zone Boundaries: bim/zone-boundaries.md
-      - BIM Asset Anchors: bim/asset-anchors.md
+    - Digital Twin: digital-twin.md
     - MES Integration: mes-integration.md
-    - MES Phase 1 Software Setup: mes-phase1-software-setup.md
-    - AI Platform Status: ai-platform-status.md
-    - Workforce Training Academy: workforce-training-academy.md
-    - Intra-Group Supply Coordination: intragroup-supply-coordination.md
-    - Penetration Test Scoping: pentest-scoping.md
-    - Penetration Test Findings: pentest-findings.md
-    - Gap Closure Report: gap-closure-report.md
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/oumar-code/Coo-Kah-Doks
       name: Master Repository — Coo-Kah-Doks
-
-extra_css:
-  - stylesheets/extra.css
 
 copyright: >
   © 2025 Coo-Cah Technologies Holdings. All rights reserved. |
