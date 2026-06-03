@@ -160,6 +160,7 @@
 | [docs/capex-opex.md](./docs/capex-opex.md) | Phase 1 CapEx ~₦28B, unit economics per product category |
 | [docs/digital-twin.md](./docs/digital-twin.md) | Asset registry for SMT lines, assembly robots, test equipment |
 | [docs/dt-implementation-plan.md](./docs/dt-implementation-plan.md) | Phased DT build plan: Phase 0 Foundation → Phase 3 Prescriptive |
+| [docs/dt-readiness-assessment.md](./docs/dt-readiness-assessment.md) | DT readiness scorecard (76/100), gap list by triage bucket, named owners, due dates, 2-week deliverables, template promotion candidates |
 | [docs/dt-phase0-governance.md](./docs/dt-phase0-governance.md) | Phase 0 governance register: workstreams, dependencies, sign-off controls |
 | [docs/dt-asset-manifest.md](./docs/dt-asset-manifest.md) | Machine-readable YAML data schema for all 142 registered assets |
 | [docs/dt-mqtt-namespace.md](./docs/dt-mqtt-namespace.md) | MQTT topic hierarchy, QoS policy, broker configuration |
