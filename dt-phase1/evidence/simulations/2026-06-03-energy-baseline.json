@@ -1,0 +1,23 @@
+{
+  "simulation_type": "design_spec_baseline",
+  "note": "Calibrate with real production data after commissioning.",
+  "inputs": {
+    "hours": 24,
+    "phone_mix": 0.35,
+    "earbud_mix": 0.3,
+    "watch_mix": 0.35,
+    "seed": 303
+  },
+  "lineage": {
+    "runner": "dt-phase1/services/offline_simulation.py",
+    "reproducibility": "Re-run with identical inputs and seed value."
+  },
+  "outputs": {
+    "hours": 24,
+    "avg_throughput_per_hour": 203.21,
+    "queue_end_units": 19,
+    "energy_total_kwh": 1586.53,
+    "amr_utilization_pct_avg": 74.33,
+    "bottleneck_risk": "low"
+  }
+}

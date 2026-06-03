@@ -37,9 +37,16 @@ def main():
     parser.add_argument("--phone-mix", type=float, default=0.5)
     parser.add_argument("--earbud-mix", type=float, default=0.35)
     parser.add_argument("--watch-mix", type=float, default=0.15)
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Deterministic random seed for reproducible simulations",
+    )
     parser.add_argument("--out", default="")
     args = parser.parse_args()
 
+    random.seed(args.seed)
     result = run_scenario(args.hours, args.phone_mix, args.earbud_mix, args.watch_mix)
     payload = {
         "simulation_type": "design_spec_baseline",
@@ -49,6 +56,11 @@ def main():
             "phone_mix": args.phone_mix,
             "earbud_mix": args.earbud_mix,
             "watch_mix": args.watch_mix,
+            "seed": args.seed,
+        },
+        "lineage": {
+            "runner": "dt-phase1/services/offline_simulation.py",
+            "reproducibility": "Re-run with identical inputs and seed value.",
         },
         "outputs": result,
     }
