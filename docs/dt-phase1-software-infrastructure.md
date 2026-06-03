@@ -59,6 +59,7 @@ This repository now includes an executable implementation kit at:
 - [ ] Dashboard/alert sign-off records archived
 - [ ] Edge fallback and broker buffering test evidence archived
 - [ ] Change-control and lock-policy references included in handover pack
+- [x] Three mandatory offline simulations archived with deterministic lineage (`dt-simulation-evidence-lineage.md`; `dt-phase1/evidence/simulations/2026-06-03-*.json`)
 
 ## Transition to commissioning
 
