@@ -139,7 +139,7 @@ time:        (nanosecond precision timestamp)
 [[outputs.influxdb_v2]]
   urls   = ["http://influxdb:8086"]
   token  = "${INFLUXDB_TOKEN}"
-  org    = "coo-cah"
+  organization = "coo-cah"
   bucket = "cce-sag-raw"
 ```
 
