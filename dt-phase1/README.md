@@ -57,7 +57,7 @@ python services/synthetic_publisher.py --profile contracts/synthetic-profile.yam
 Run offline design-spec simulation:
 
 ```bash
-python services/offline_simulation.py --hours 24 --phone-mix 0.5 --earbud-mix 0.35 --watch-mix 0.15 --out simulation-baseline.json
+python services/offline_simulation.py --hours 24 --phone-mix 0.5 --earbud-mix 0.35 --watch-mix 0.15 --seed 42 --out simulation-baseline.json
 ```
 
 ## Promotion Path

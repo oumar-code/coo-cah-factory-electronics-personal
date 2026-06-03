@@ -2,26 +2,54 @@
 
 > **Project Coo-Cah | AI-Powered Manufacturing Ecosystem**
 > **Factory:** Coo-Cah Personal Electronics Factory | **Location:** Sagamu Industrial Estate, Ogun State | **Phase:** Phase 1
-> **Document Version:** 1.0 | **Owner:** Digital Manufacturing Team Lead + PMO
-> **Assessment Date:** 2026-06-02
+> **Document Version:** 1.1 | **Owner:** Digital Manufacturing Team Lead + PMO
+> **Assessment Date:** 2026-06-03
 > **Master Standards Reference:** [Coo-Kah-Doks — docs/orchestration/dt-readiness-control-tower.md](https://github.com/oumar-code/Coo-Kah-Doks/blob/main/docs/orchestration/dt-readiness-control-tower.md)
 > **DT Role:** **Primary DT Pilot Factory** — designated proving ground for group-wide Wave 0/1 rollout
 
 ---
 
-## ⚠ DT-Ready Status: NOT READY
+## ⚠ DT-Ready Status: PRE-COMMISSIONING (NOT RELEASE READY)
 
 The hard release rule in the group scorecard requires **all three** conditions below to be green.
-None are currently met.
 
 | Condition | Status | Blocking Reason |
 |---|---|---|
-| All mandatory artifacts complete and validated | 🔴 Not met | `dt-asset-manifest.md` not yet co-signed; `sensor-map.md` full population pending; BIM IFC acceptance not complete |
-| Live data connectivity proven for critical assets | 🔴 Not met | Factory in PLANNED/under-construction phase — no machines commissioned, no live telemetry |
-| ≥ 3 DT simulations with reproducible evidence lineage | 🔴 Not met | Offline simulation scaffold built but zero simulations run with archived evidence |
+| All mandatory artifacts complete and validated | 🔴 Actionable (targeted close-out in progress) | `dt-asset-manifest.md` not yet co-signed; `sensor-map.md` full population pending vendor export; BIM IFC acceptance + GUID replacement pending contractor handover |
+| Live data connectivity proven for critical assets | 🟠 Construction-gated (blocked by commissioning dependency) | No commissioned machines yet; unblock trigger set to first critical asset energization with Day-0/Day-7 protocol pre-approved in `dt-live-connectivity-commissioning-protocol.md` |
+| ≥ 3 DT simulations with reproducible evidence lineage | 🟢 Met (offline pre-commissioning baseline) | Three deterministic simulation runs archived with lineage in `dt-simulation-evidence-lineage.md` and `dt-phase1/evidence/simulations/2026-06-03-*.json` |
 
 Score alone cannot override this rule. This assessment reflects **documentation and execution readiness**,
 not live-operational readiness.
+
+---
+
+## 0. Two-Gate Strategy (2026-06-03 Implementation)
+
+The hard release rule is preserved with a two-gate operating model:
+
+- **Gate A — Pre-Commissioning Readiness:** close all controllable documentation/simulation evidence now.
+- **Gate B — Commissioning Runtime Proof:** execute live connectivity proof immediately when critical assets are energized.
+
+### Gate A (Now)
+
+- Condition 1 is tracked as active close-out (DOC-01, DOC-02, DOC-03, DOC-04).
+- Condition 2 is closed with deterministic offline evidence lineage (3/3 mandatory simulations complete).
+
+### Gate B (On Energization Trigger)
+
+- Condition 3 remains construction-gated until commissioning.
+- Execution and evidence requirements are locked in `dt-live-connectivity-commissioning-protocol.md`.
+- Day-0 and Day-7 evidence packs are pre-defined to shorten time-to-green after machine arrival.
+
+### Temporary Exception Governance Path
+
+An exception request can be submitted **only for Condition 3** while the site is still under construction.
+The request is valid only if:
+
+1. Conditions 1 and 2 are actively controlled (with Condition 2 green).
+2. Condition 3 includes owner, unblock trigger, and pre-approved commissioning protocol.
+3. Waiver validity is time-bound to commissioning milestones and reviewed weekly in governance cadence.
 
 ---
 
@@ -89,8 +117,8 @@ Severity: 🔴 Red (owner within 2 business days) | 🟡 Amber (closure plan wit
 |---|---|---|---|---|---|
 | SIM-01 | Pilot charter not yet signed: the 14 simulation use cases require a frozen pilot charter (factory slice, scope boundary, locked value hypotheses, KPI formulas, baseline windows, confidence thresholds) per `dt-pilot-standards-and-templates.md` | 🔴 | Group CTO + PMO | Before first physical intervention | `dt-pilot-standards-and-templates.md` Section 1; `post-gate-4-dt-execution.md` Section 5 |
 | SIM-02 | Experiment designs not frozen for any of the 14 use cases: no pre/post + matched-control design, no confounder controls, no minimum effect sizes, no statistical methods documented | 🟡 | DT Engineering Lead | 2026-08-31 | `dt-pilot-standards-and-templates.md` Section 2; `digital-twin.md` Section 4 |
-| SIM-03 | Offline simulation results not archived: `dt-phase1/services/offline_simulation.py` exists but has not been run; no scenario output files committed | 🟡 | DT Engineering Lead | 2026-07-31 | `dt-phase1-software-infrastructure.md` acceptance-gate checklist |
-| SIM-04 | No reproducible simulation evidence for any of the 3 mandatory simulations required by the hard release rule (throughput, quality/predictive maintenance, energy) | 🔴 | DT Engineering Lead | 2026-08-31 | `dt-readiness-control-tower.md` hard release rule; `post-gate-4-dt-execution.md` Section 4 |
+| SIM-03 | Offline simulation results archived with deterministic inputs and seed lineage in dedicated evidence register | 🟢 | DT Engineering Lead | 2026-06-03 (closed) | `dt-simulation-evidence-lineage.md`; `dt-phase1/evidence/simulations/2026-06-03-*.json` |
+| SIM-04 | Three mandatory simulation evidence records complete (throughput, quality/predictive maintenance proxy, energy) with reproducible command lineage | 🟢 | DT Engineering Lead | 2026-06-03 (closed) | `dt-simulation-evidence-lineage.md`; `dt-phase1/services/offline_simulation.py` |
 | SIM-05 | KPI dictionary not yet versioned and change-controlled per `dt-pilot-standards-and-templates.md` Section 3: OEE, FPY, DPPM, energy intensity formulas are referenced across docs but not frozen in a change-controlled KPI dictionary | 🟡 | DT Engineering Lead + MES Product Owner | 2026-07-31 | `dt-pilot-standards-and-templates.md` Section 3 |
 
 ### 2.5 Ownership / Governance
@@ -162,4 +190,5 @@ The following patterns developed in this factory are mature enough to be reviewe
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
+| 1.1 | 2026-06-03 | Digital Manufacturing Team Lead + PMO | Implemented two-gate strategy: Condition 2 closed with reproducible simulation evidence lineage; Condition 3 reclassified as construction-gated with commissioning protocol and temporary exception controls |
 | 1.0 | 2026-06-02 | Digital Manufacturing Team Lead + PMO | Initial DT readiness assessment — Wave 0 pilot scorecard, gap triage, 2-week deliverables, template promotion candidates |

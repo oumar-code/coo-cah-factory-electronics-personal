@@ -148,7 +148,7 @@ Phase 0 closes only when all of the following are true:
 
 | Carry-Over Item | Owner | Due Date | Tracking Reference | Closure Status |
 |---|---|---|---|---|
-| _Add item if needed_ | _Name_ | _YYYY-MM-DD_ | _Issue/Doc link_ | _Open / Closed_ |
+| Live connectivity proof for critical assets (hard release Condition 3) — construction-gated until first machine energization | IT/OT Infrastructure Lead + Factory Engineering Lead | Triggered on first critical asset energization; Day-7 stability close | [`dt-live-connectivity-commissioning-protocol.md`](./dt-live-connectivity-commissioning-protocol.md) | Open (commissioning dependency) |
 
 ---
 
@@ -158,3 +158,20 @@ Phase 0 closes only when all of the following are true:
 - [`dt-asset-manifest.md`](./dt-asset-manifest.md)
 - [`dt-mqtt-namespace.md`](./dt-mqtt-namespace.md)
 - [`dt-infrastructure.md`](./dt-infrastructure.md)
+- [`dt-live-connectivity-commissioning-protocol.md`](./dt-live-connectivity-commissioning-protocol.md)
+- [`dt-simulation-evidence-lineage.md`](./dt-simulation-evidence-lineage.md)
+
+---
+
+## 10. Temporary Exception Path (Condition 3 Only)
+
+The hard release rule is not relaxed. A temporary governance exception can only be requested for
+Condition 3 while the site is under construction.
+
+Exception request minimum controls:
+
+1. Condition 1 remains tracked with named owners and due dates.
+2. Condition 2 must be green with archived reproducible evidence lineage.
+3. Condition 3 must be recorded as construction-gated with explicit unblock trigger.
+4. Day-0 and Day-7 live-connectivity protocol must be pre-approved before waiver submission.
+5. Waiver expiry must be set to the commissioning milestone date and reviewed weekly.

@@ -77,6 +77,8 @@ nav:
     - CapEx / OpEx: capex-opex.md
     - Digital Twin:
       - Readiness Assessment: dt-readiness-assessment.md
+      - Simulation Evidence Lineage: dt-simulation-evidence-lineage.md
+      - Live Connectivity Commissioning Protocol: dt-live-connectivity-commissioning-protocol.md
       - Architecture & Asset Registry: digital-twin.md
       - Implementation Plan: dt-implementation-plan.md
       - BIM & Simulation Readiness Program: bim-simulation-readiness-program.md
